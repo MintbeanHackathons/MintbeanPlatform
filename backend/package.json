@@ -1,0 +1,42 @@
+{
+  "name": "mintbean-platform-backend",
+  "version": "1.0.0",
+  "description": "Backend for Mintbean",
+  "author": "Monarch Wadia",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "test": "jest",
+    "sql": "sequelize-cli",
+    "pristine": "NODE_ENV=development server/scripts/pristine.sh"
+  },
+  "lint-staged": {
+    "*.{js}": "yarn lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@hapi/boom": "^9.1.0",
+    "@hapi/hapi": "^19.1.1",
+    "@hapi/joi": "^17.1.1",
+    "consola": "^2.11.3",
+    "dotenv": "^8.2.0",
+    "faker": "^4.1.0",
+    "hapi-pino": "^8.0.0",
+    "pg": "^8.0.2",
+    "sequelize": "^5.21.6",
+    "xlsx": "^0.15.6"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "husky": "^4.0.0",
+    "lint-staged": "^10.0.0",
+    "nodemon": "^1.18.9",
+    "sequelize-cli": "^5.5.1"
+  }
+}
