@@ -1,12 +1,14 @@
 # Overview
 
-## What is Mintbean CareerHack?
+## What is Mintbean?
 
 Mintbean is a talent incubator helping software developers get access to employers faster. We work to accelerate the careers, skillsets, and professional networks of software developers globally.
 
+## What is Mintbean CareerHack?
+
 CareerHack is a regularly recurring series of hackathons hosted by Mintbean for the benefit of its participants. We hope that our participants find CareerHack useful and enlightening.
 
-## Mission and Goal
+## CareerHack's Mission and Goal
 
 CareerHack's mission is to ultimately help software developers find jobs faster. In service of this mission, there are several goals that the CareerHack series aims to reach:
 
@@ -16,7 +18,17 @@ CareerHack's mission is to ultimately help software developers find jobs faster.
 1. To familiarize participants with industry-standard design patterns.
 1. To entertain participants.
 
-## Schedule.
+## Who are these hackathons for?
+
+This hackathon is for developers of all levels who have some experience with HTML, CSS, and JavaScript.
+
+## What is the Mintbean community?
+
+The Mintbean community is a network of developers interested in personal and professional development. Community participation is encouraged through our Discord channel. 
+
+**For Hackathon participants:** The hackathons and the community are two sides of the same coin, so get involved and say hello! :-)
+
+## Schedule
 
 ### Short-format hackathons
 
