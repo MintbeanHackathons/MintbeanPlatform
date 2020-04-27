@@ -11,5 +11,18 @@ module.exports = {
           logLevel: 'debug' 
       },
     }
+  },
+  chainWebpack: config => {
+    // markdown Loader
+    config.module
+      .rule('markdown')
+      .test(/\.md$/)
+      .use('html-loader')
+        .loader('html-loader')
+        .end()
+      // Add another loader
+      .use('markdown-loader')
+        .loader('markdown-loader')
+        .end()
   }
 }
