@@ -25,7 +25,7 @@
 }
 
 .content-container {
-  max-width: 500px;
+  max-width: 768px;
   margin: auto;
 }
 
@@ -33,7 +33,16 @@ a {
   font-weight: bold;
   color: #2c3e50;
 }
-a.router-link-exact-active {
+a {
   color: #42b983;
+}
+
+table, th, td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 7px 12px;
 }
 </style>
