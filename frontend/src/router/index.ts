@@ -3,6 +3,7 @@ import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
 import Scores from "../views/Scores.vue";
 import Score from "../views/Score.vue";
+import Educators from "../views/Educators.vue";
 import NotFound from "../views/NotFound.vue";
 
 Vue.use(VueRouter);
@@ -23,6 +24,11 @@ const routes: Array<RouteConfig> = [
     name: "Score",
     component: Score,
     props: true
+  },
+  {
+    path: "/educators",
+    name: "Educators",
+    component: Educators
   },
   {
     path: "*",
