@@ -16,13 +16,22 @@ module.exports = {
     // markdown Loader
     config.module
       .rule('markdown')
-      .test(/\.md$/)
-      .use('html-loader')
-        .loader('html-loader')
-        .end()
-      // Add another loader
-      .use('markdown-loader')
-        .loader('markdown-loader')
-        .end()
+        .test(/\.md$/)
+        .use('html-loader')
+          .loader('html-loader')
+          .end()
+        // Add another loader
+        .use('markdown-loader')
+          .loader('markdown-loader');
+  },
+  css: {
+    loaderOptions: {
+      sass: {
+        implementation: require('sass'),
+        sassOptions: {
+          indentedSyntax: false
+        }
+      }
+    }
   }
 }

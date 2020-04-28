@@ -1,4 +1,4 @@
-# Scoring
+# CareerHack Scoring
 
 * 33% Code Quality
 * 33% Aesthetic Appeal

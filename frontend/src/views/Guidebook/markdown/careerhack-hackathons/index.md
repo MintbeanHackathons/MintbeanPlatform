@@ -1,16 +1,35 @@
-# Short-Form Hackathon Workflow + Instructions
+# CareerHack Hackathons
 
-This page contains instructions on the format and schedule of short-form hackathons. 
+<div class="page-header">
+   CareerHack Hackathons are 4-hour hackathons. Learn more about how they can benefit you, how they work, and how to participate.
+</div>
 
-## About Short-Form Hackathons
+## About CareerHack Hackathons
 
-Short-format hackathons are 4-hour "bursts". These are designed to encourage daily coding practice. The goal in short-format hackathons is to learn to build new types of projects every week.
+CareerHack Hackathons are short-format hackathons are 4-hour "bursts". These are designed to encourage daily coding practice. The goal in short-format hackathons is to learn to build new types of projects every week.
 
-## Schedule
+* Solo, structured, semi-competitive.
+* 12pm-4pm, Mondays and Wednesdays (excluding Ontario statutory holidays).
+* Everybody works on the same hackathon challenge.
+* Often (but not always) followed by a Hireside Chat.
 
-* 12pm-4pm.
-* Mondays and Wednesdays (excluding Ontario statutory holidays).
-* Often followed by a Hireside Chat (but not always)
+## How to sign up for an event
+
+Please go to [Eventbrite] to sign up for an upcoming event.
+
+## Who are these hackathons for?
+
+This hackathon is for developers of all levels who have some experience with HTML, CSS, and JavaScript.
+
+## More Information
+
+1. [Scoring]
+
+## Winning is optional
+
+CareerHack Hackathons are a safe space where learning takes place. They are designed to be as beginner-friendly and low-pressure as possible. Many participants don't even try to win at CareerHack, and instead focus on learning new things. Making mistakes is encouraged as a natural part of the learning process.
+
+Toxic, aggressive, over-competitive, and hostile behaviours unsuitable for a workplace/educational environment are met with warnings, kicks and permabans.
 
 ## Timetable
 
@@ -32,7 +51,7 @@ Short-format hackathons are 4-hour "bursts". These are designed to encourage dai
 
 ## Links
 
-* [Eventbrite](https://www.eventbrite.com/d/online/mintbean/) is where you can go to sign up for an event.
+* [Eventbrite] is where you can go to sign up for an event.
 * [Github](https://github.com/MintbeanHackathons) is where all Hackathon challenges are posted at 12pm. Look for a project with your date on it.
 * [Twitch](https://www.twitch.tv/mintbeancareerhack/) is our video broadcast platform of choice. Stay tuned here during the hackathon.
 * **Discord** is where all the action happens.  [Sign up on Eventbrite](https://www.eventbrite.com/d/online/mintbean/) to receive an invitation to the Discord server.
@@ -40,3 +59,6 @@ Short-format hackathons are 4-hour "bursts". These are designed to encourage dai
 ## Getting started.
 
 See the [How-To]('/guidebook/how-to) manual for more information on how to get started.
+
+[Eventbrite]: https://www.eventbrite.com/d/online/mintbean/
+[Scoring]: hackathon-workflows/scoring

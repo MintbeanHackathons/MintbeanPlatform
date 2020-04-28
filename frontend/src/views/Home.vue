@@ -1,12 +1,12 @@
 <template lang="pug">
-  div.home
+  div
     img(alt="Vue logo" src="../assets/logo.png")
     div.hello
       h1 Mintbean
       h3 A Software Developer Talent Incubator
       p We work to accelerate the careers, skillsets, and professional networks of software developers globally. 
       h3 Essential Links
-        ul
+        ul.essential-links
           li
             router-link(to="/scores") Scores
           li
@@ -15,23 +15,28 @@
             mb-a(href="https://github.com/MintbeanHackathons") Github
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../styles/colors";
+@import "../styles/dimensions";
+@import "../styles/mixins";
+
 * {
-    text-align: center;
+  text-align: center;
 }
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+
+.essential-links {
+  ul {
+    list-style-type: none;
+  }
+  li {
+    @include respond-to('small') {
+      display: inline-block;
+      width: 100%;
+      margin: vstep(1) hstep(0);
+    }
+    display: inline-block;
+    margin: vstep(3) hstep(2);
+  }
 }
 </style>
 

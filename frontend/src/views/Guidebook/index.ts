@@ -6,7 +6,7 @@
  * 
  */
 
-import MbMarkdown from "../../components/mb-markdown.vue";
+import MbGuidebook from "../../components/mb-guidebook.vue";
 const files = require.context('./markdown', true, /\.md$/);
 
 const ensureLeadingSlash = (_string: string) => {
@@ -51,7 +51,7 @@ function guidebookRoutes(root: string) {
       props: {
         markdown: files(filename)
       },
-      component: MbMarkdown
+      component: MbGuidebook
     }));
 
   console.log(routes);
