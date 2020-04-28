@@ -1,5 +1,7 @@
 # CareerHack Hackathons
 
+[Mintbean Guidebook](/guidebook) > CareerHack Hackathons
+
 <div class="page-header">
    CareerHack Hackathons are 4-hour hackathons. Learn more about how they can benefit you, how they work, and how to participate.
 </div>

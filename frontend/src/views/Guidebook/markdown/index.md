@@ -1,8 +1,18 @@
 # Mintbean Guidebook
 
+Mintbean Guidebook
+
 <div class="page-header">
   Learn about the programs that Mintbean offers, how to become a member, and how to get involved in the community.
 </div>
+
+## Index
+
+* [CareerHack Hackathons](/guidebook/careerhack-hackathons)
+* [Weekend Workshops](/guidebook/weekend-workshops)
+* [Collaboration Events](/guidebook/collaboration-events)
+* [Volunteer & Open Source Opportunities](/guidebook/volunteer-opportunities)
+* Job Opportunities (Soon)
 
 ## What is Mintbean and Mintbean CareerHack?
 
@@ -29,13 +39,5 @@ Membership is offered only to software developers. There is no barrier based on 
 Currently, all events and membership are **_completely free_** for software developers.
 
 Membership in the community can be acquired simply by attending one of our CareerHack events. Visit the [CareerHack Hackathons][CareerHack Hackathons] page for more details.
-
-### Weekend workshops
-
-Weekend workshops are 3-day workshop events that start each Friday and end on Sunday. These are designed to encourage the building of more involved projects at a time that is convenient for all involved. The goal in long-format hackathons is to fully exercise participants' software development abilities while building useful pieces of software.
-
-* Solo or group-based, informal, collaborative.
-* Timings informal, Friday to Sunday, regardless of holidays.
-* Each participant is assigned a real-world ticket, task or project.
 
 [CareerHack Hackathons]: guidebook/careerhack-hackathons

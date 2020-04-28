@@ -9,6 +9,9 @@
       form(@submit="handleSearch")
         input(type="email" name="email" v-model="email" placeholder="Email")
         input(type="submit" value="Search")
+    div
+      p
+        mb-a(href="https://airtable.com/shrFFhvxcMjrlWjdJ") Request scoring for a Hackathon you attended on or before Friday, Apr 24, 2020
 
 </template>
 

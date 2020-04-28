@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/scores">Scores</router-link> | 
+      <router-link to="/scores">Legacy Scores</router-link> | 
       <router-link to="/guidebook">Guidebook</router-link>
     </div>
     <div class="content-container">

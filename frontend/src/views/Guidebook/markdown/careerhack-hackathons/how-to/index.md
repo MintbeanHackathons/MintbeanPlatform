@@ -12,6 +12,8 @@
   1. Voting for a division winner
   1. In case of ties -->
 
+[Mintbean Guidebook](/guidebook) > [CareerHack Hackathons](/guidebook/careerhack-hackathons) > How-To Guide
+
 1. Coding workflow
   1. [Fork + clone the challenge repo](clone-and-fork)
   1. [Performing Code Reviews and voting for the best project](perform-code-reviews)

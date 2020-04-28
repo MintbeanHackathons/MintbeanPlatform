@@ -22,7 +22,21 @@ module.exports = {
           .end()
         // Add another loader
         .use('markdown-loader')
-          .loader('markdown-loader');
+          .loader('markdown-loader')
+          .end()
+        .use('handlebars-resolver')
+          .loader('./markdown-routes-loader.js')
+          .end()
+        .use('ejs-loader')
+          .loader('ejs-loader')
+          // .tap(options => {
+          //   console.log("OPTIONS",options);
+          //   return {
+          //     render: {
+          //       test: 'Test'
+          //     }
+          //   };
+          // });
   },
   css: {
     loaderOptions: {
