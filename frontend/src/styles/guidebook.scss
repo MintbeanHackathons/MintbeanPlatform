@@ -20,4 +20,8 @@
     background-color: $least-minty;
     padding: vstep(5) hstep(5);
   }
+
+  table, tr, td, th {
+    text-align: left;
+  }
 }

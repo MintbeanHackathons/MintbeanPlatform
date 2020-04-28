@@ -1,5 +1,7 @@
 # How to: Fork + clone the challenge repo
 
+[Mintbean Guidebook](/guidebook) > [CareerHack Hackathons](/guidebook/careerhack-hackathons) > How to: Fork + clone the challenge repo
+
 **Important: Do NOT clone the repo directly. This may cause issues that could delay you during the submission phase of the project. Instead, fork the main repo first, then clone your own forked copy of the repo**
 
 1. Click on the repo indicated in Discord as today's challenge. (These usually start with the day's date. For example: [2020-04-27-conways-game-easier-with-examples](https://github.com/MintbeanHackathons/2020-04-27-conways-game-easier-with-examples))

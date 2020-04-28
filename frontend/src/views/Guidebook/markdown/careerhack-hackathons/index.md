@@ -8,8 +8,11 @@
 
 ## Index
 
-* [How-to Guide](careerhack-hackathons/how-to)
 * [Frequently Asked Questions](careerhack-hackathons/frequently-asked-questions)
+* [CareerHack Scoring](careerhack-hackathons/careerhack-scoring)
+* [Fork + clone the challenge repo](careerhack-hackathons/clone-and-fork)
+* [Performing Code Reviews and voting for the best project](careerhack-hackathons/perform-code-reviews)
+* [Submitting your project](careerhack-hackathons/submitting-your-code)
 
 ## About CareerHack Hackathons
 
@@ -28,10 +31,6 @@ Please go to [Eventbrite] to sign up for an upcoming event.
 
 This hackathon is for developers of all levels who have some experience with HTML, CSS, and JavaScript.
 
-## More Information
-
-1. [Scoring]
-
 ## Winning is optional
 
 CareerHack Hackathons are a safe space where learning takes place. They are designed to be as beginner-friendly and low-pressure as possible. Many participants don't even try to win at CareerHack, and instead focus on learning new things. Making mistakes is encouraged as a natural part of the learning process.
@@ -39,6 +38,8 @@ CareerHack Hackathons are a safe space where learning takes place. They are desi
 Toxic, aggressive, over-competitive, and hostile behaviours unsuitable for a workplace/educational environment are met with warnings, kicks and permabans.
 
 ## Timetable
+
+(**Note:** If you are here as part of a [Collaboration Event](/guidebook/collaboration-events), this timetable may not apply. Please check your event's timetable for details. )
 
 | Start | End  | Description |
 |-------|------|-------------|
@@ -69,5 +70,4 @@ See the [How-To]('/guidebook/how-to) manual for more information on how to get s
 
 [Eventbrite]: https://www.eventbrite.com/d/online/mintbean/
 [Github]: https://github.com/MintbeanHackathons
-[Scoring]: hackathon-workflows/scoring
 [Twitch]: https://www.twitch.tv/mintbeancareerhack/

@@ -12,7 +12,8 @@ Mintbean Guidebook
 * [Weekend Workshops](/guidebook/weekend-workshops)
 * [Collaboration Events](/guidebook/collaboration-events)
 * [Volunteer & Open Source Opportunities](/guidebook/volunteer-opportunities)
-* Job Opportunities (Soon)
+* Mintbean Hiresides (Soon!!)
+* Job Opportunities (Soon!!)
 
 ## What is Mintbean and Mintbean CareerHack?
 

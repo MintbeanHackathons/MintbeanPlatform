@@ -1,7 +1,9 @@
 # Frequently Asked Questions
 
+[Mintbean Guidebook](/guidebook) > [CareerHack Hackathons](/guidebook/careerhack-hackathons) > Frequently Asked Questions
+
 <div class="page-header">
-  Quickly find answers to the most common questions asked during CareerHack events.
+  Answers to the most common questions asked during CareerHack events.
 </div>
 
 ## This is my first hackathon. Any tips for a newbie?
@@ -66,7 +68,7 @@ There are 3 equally-weighted portions:
 - 33% Code Quality - how well written the code is, from a professional standards point of view
 - 33% Code Review Performance - the usefulness and clarity of your comments on other people's code
 
-For more information, please see the [Scoring](/guidebook/careerhack-hackathons/scoring) page.
+For more information, please see the [Scoring](/guidebook/careerhack-hackathons/careerhack-scoring) page.
 
 ## How does Code Review work?
 

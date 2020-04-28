@@ -1,8 +1,8 @@
 # Submitting your project
 
-## Creating a pull request
+[Mintbean Guidebook](/guidebook) > [CareerHack Hackathons](/guidebook/careerhack-hackathons) > Submitting your project
 
-<!-- Prerequisite: it is assumed that you have [forked the project repo and cloned your own forked copy](how-to/clone-and-fork). -->
+## Creating a pull request
 
 1. Push your code up to your fork.
 1. On Github, inside your forked repository, click on "New Pull Request".
@@ -11,7 +11,7 @@
 1. Make sure you have finished the requirements in the `How to get points for Aesthetic Appeal` section.
 
 
-## Leaving deployment links
+### Leaving deployment links
 
 In order to assess aesthetic quality, we require some kind of way to see what your app looks like.
 
@@ -23,8 +23,6 @@ Choose ONE of the following methods:
 1. Take 3 to 10 photos of your project. Coppy-paste OR drag/drop the images into your Pull Request's 1st comment.
 
 You're done!
-
-<!-- Next, read [how to perform a code review](how-to/perform-a-code-review) -->
 
 ## Useful Links
 
