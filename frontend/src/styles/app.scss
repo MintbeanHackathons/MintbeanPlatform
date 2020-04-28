@@ -22,7 +22,7 @@ a {
 // table styles
 
 table, th, td {
-  border: 2px solid $darkest;
+  border: 2px solid $less-blue;
   border-collapse: collapse;
 }
 
@@ -66,7 +66,7 @@ li {
 .content-container, #nav {
   padding: vstep(3) hstep(0);
   margin: auto;
-  max-width: 768px;
+  max-width: 700px;
 }
 
 #nav {

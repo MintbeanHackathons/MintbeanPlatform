@@ -4,6 +4,11 @@
    CareerHack Hackathons are 4-hour hackathons. Learn more about how they can benefit you, how they work, and how to participate.
 </div>
 
+## Index
+
+* [How-to Guide](careerhack-hackathons/how-to)
+* [Frequently Asked Questions](careerhack-hackathons/frequently-asked-questions)
+
 ## About CareerHack Hackathons
 
 CareerHack Hackathons are short-format hackathons are 4-hour "bursts". These are designed to encourage daily coding practice. The goal in short-format hackathons is to learn to build new types of projects every week.
@@ -49,11 +54,11 @@ Toxic, aggressive, over-competitive, and hostile behaviours unsuitable for a wor
 1. You must let us know, on Discord, when you've finished coding.
 1. You must let us know, on Discord, when you've finished code review.
 
-## Links
+## External Links
 
 * [Eventbrite] is where you can go to sign up for an event.
-* [Github](https://github.com/MintbeanHackathons) is where all Hackathon challenges are posted at 12pm. Look for a project with your date on it.
-* [Twitch](https://www.twitch.tv/mintbeancareerhack/) is our video broadcast platform of choice. Stay tuned here during the hackathon.
+* [Github] is where all Hackathon challenges are posted at 12pm. Look for a project with your date on it.
+* [Twitch] is our video broadcast platform of choice. Stay tuned here during the hackathon.
 * **Discord** is where all the action happens.  [Sign up on Eventbrite](https://www.eventbrite.com/d/online/mintbean/) to receive an invitation to the Discord server.
 
 ## Getting started.
@@ -61,4 +66,6 @@ Toxic, aggressive, over-competitive, and hostile behaviours unsuitable for a wor
 See the [How-To]('/guidebook/how-to) manual for more information on how to get started.
 
 [Eventbrite]: https://www.eventbrite.com/d/online/mintbean/
+[Github]: https://github.com/MintbeanHackathons
 [Scoring]: hackathon-workflows/scoring
+[Twitch]: https://www.twitch.tv/mintbeancareerhack/

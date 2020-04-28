@@ -13,9 +13,9 @@
 
   .page-header {
     @include respond-to('small') {
-      width: 100%;
+      max-width: 100%;
     }
-    width: 50%;
+    max-width: 75%;
 
     background-color: $least-minty;
     padding: vstep(5) hstep(5);
