@@ -13,6 +13,8 @@
             mb-a(href="https://www.eventbrite.ca/o/mintbean-28752300031") Upcoming Events
           li
             mb-a(href="https://github.com/MintbeanHackathons") Github
+          li
+            router-link(to="/contributors") Contributors
 </template>
 
 <style scoped>
@@ -35,6 +37,6 @@ a {
 <script>
 // @ is an alias to /src
 export default {
-  name: "Home"
+  name: "Home",
 };
 </script>
