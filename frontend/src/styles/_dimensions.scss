@@ -1,0 +1,9 @@
+@import './variables';
+
+@function vstep($degree) {
+  @return $vertical-cadence * $degree;
+}
+
+@function hstep($degree) {
+  @return $horizontal-cadence * $degree;
+}

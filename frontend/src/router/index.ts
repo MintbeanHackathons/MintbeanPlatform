@@ -5,6 +5,7 @@ import Scores from "../views/Scores.vue";
 import Score from "../views/Score.vue";
 import Educators from "../views/Educators.vue";
 import NotFound from "../views/NotFound.vue";
+import { guidebookRoutes } from '../views/Guidebook';
 
 Vue.use(VueRouter);
 
@@ -25,6 +26,7 @@ const routes: Array<RouteConfig> = [
     component: Score,
     props: true
   },
+  ...guidebookRoutes('/guidebook'),
   {
     path: "/educators",
     name: "Educators",
