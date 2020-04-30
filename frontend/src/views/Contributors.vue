@@ -15,6 +15,8 @@
             a(:href="contributor.html_url") {{contributor.login}}
           td 
             a(:href="contributor.portfolio") {{ contributor.portfolio && 'portfolio' }}
+          td
+            a(:href="contributor.linkedin") {{ contributor.linkedin && 'linkedin' }}
 
 </template>
 
@@ -28,6 +30,13 @@
 
 <script>
 import { ApiService } from "../services/apiService";
+
+const getLinkedInUrl = username => {
+  const linkedIn = {
+    'sophyphreak': 'https://www.linkedin.com/in/sophyphreak/'
+  }
+  return linkedIn[username] || null
+}
 
 export default {
   name: "Contributors",
@@ -49,6 +58,7 @@ export default {
           const { data } = await apiService.get(contributor.url);
           contributor.name = data.name;
           contributor.portfolio = data.blog;
+          contributor.linkedIn = getLinkedInUrl(contributor.login)
         }
         this.contributors = contributors;
         this.errorMessage = null;
