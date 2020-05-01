@@ -22,25 +22,27 @@ Mintbean CareerHack is a series of virtual hackathons where students are shown t
 
 *Learned about Chrome extensions, how to build one. Participated in my first ever hackathon and got familiar with the process. Enjoyed the heady rush of coding in a set time frame. Performed code review after a long time. Had done it in my previous job. That's it in a nutshell.* - Posh G
 
-Get insights and feedback about the quality and employer-relevance of your curriculum.
+## Get insights and feedback about the quality and employer-relevance of your curriculum.
+
 We have the ability to provide our educational partners with customized, anonymized feedback into the skillsets and capabilities of their students. These insights are delivered by industry veterans and senior hiring managers from deep within the software industry. In doing so, we provide an unbiased, non-discriminatory, and actionable feedback process for educators to continuously improve their curricula to match employer standards and expectations.
 
 We've helped hundreds of software developers receive exceptional learning experiences that support the dissemination of industry standards, best practices, techniques, and deep insights into the nature of the software development industry. Our customized professional development programs are aspirational and actionable; deeply supporting educational institutions to provide their students with strong instructional activities that are highly industry-relevant.
 
 ## Our Offerings
 
-Continuous professional development
+### Continuous professional development
+
 Our hackathons help students overcome challenges and create working products multiple times per week. Through the medium of hackathon-based learning, Mintbean allows software development students to create a practice of continuous coding. 
 
 Mintbean's community-based approach to professional development inspires students to continuously improve their skillsets, build their professional networks, and develop competency.
 
-## Service-learning
+### Service-learning
 
 We offer opportunities to work on real-life software development projects with strong mentorship and technical guidance from experienced developers. An excellent way for new software developers to earn work experience is to volunteer with nonprofits, charities, and open source projects.
 
 Mintbean's network of nonprofits, charities, and open source projects has allowed us to help students and recent graduates gain real work experience that is relevant and useful to list on their resumes, and which could provide exposure and visibility with potential employers in the software development industry.
 
-## Networking Opportunities
+### Networking Opportunities
 
 Being a part of our community can be a stepping stone that enhances and complements the job search process. Through CareerHack Hackathons, Hireside Chats, service-learning opportunities, and other Mintbean initiatives, students have had the opportunity to grow their careers and their skillsets by being a part of the Mintbean community.
 

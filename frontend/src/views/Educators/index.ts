@@ -7,7 +7,7 @@
  */
 
 import MbGuidebook from "../../components/mb-guidebook.vue";
-const files = require.context('./', true, /\.md$/);
+const files = require.context('./markdown', true, /\.md$/);
 
 const ensureLeadingSlash = (_string: string) => {
   let string = _string;
