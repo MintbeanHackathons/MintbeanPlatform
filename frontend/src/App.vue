@@ -1,16 +1,15 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/scores">Legacy Scores</router-link> | 
-      <router-link to="/guidebook">Guidebook</router-link>
-    </div>
-    <div class="content-container">
-      <router-view />
-    </div>
-    <div class="accent-bar top"/>
-    <div class="accent-bar bottom"/>
-  </div>
+<template lang="pug">
+  #app
+    #nav
+      router-link.mr-1.ml-1(to="/") Home
+      | |
+      router-link.mr-1.ml-1(to="/scores") Legacy Scores
+      | |
+      router-link.ml-1(to="/guidebook") Guidebook
+    .content-container
+      router-view
+    .accent-bar.top
+    .accent-bar.bottom
 </template>
 
 <style lang="scss" scoped>
