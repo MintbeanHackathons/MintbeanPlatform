@@ -85,4 +85,3 @@ If you don't have much experience with JavaScript modern frameworks give it a tr
 If you have solid or at least decent JavaScript fundamentals I strongly recommend you this [Vue.js Step By Step Tutorial](https://laracasts.com/series/learn-vue-2-step-by-step).
 
 You also can learn a lot from the [Official Vue Guide](https://vuejs.org/v2/guide/) and totally free. If you find another cool resource learn Vue, feel free to add it to this guide.
-
