@@ -1,5 +1,5 @@
 <template lang="pug">
-  .guidebook
+  .educators
     mb-markdown(:markdown="markdown")
 </template>
 
