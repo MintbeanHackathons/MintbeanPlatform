@@ -6,7 +6,7 @@
  * 
  */
 
-import MbGuidebook from "../../components/mb-guidebook.vue";
+import MbEducators from "../../components/mb-educators.vue";
 const files = require.context('./markdown', true, /\.md$/);
 
 const ensureLeadingSlash = (_string: string) => {
@@ -51,7 +51,7 @@ function educatorRoutes(root: string) {
       props: {
         markdown: files(filename)
       },
-      component: MbGuidebook
+      component: MbEducators
     }));
 
   console.log(routes);

@@ -4,7 +4,6 @@ import Home from "../views/Home.vue";
 import Scores from "../views/Scores.vue";
 import Score from "../views/Score.vue";
 import NotFound from "../views/NotFound.vue";
-import { guidebookRoutes } from '../views/Guidebook';
 import { educatorRoutes } from '../views/Educators';
 
 Vue.use(VueRouter);
@@ -26,7 +25,6 @@ const routes: Array<RouteConfig> = [
     component: Score,
     props: true
   },
-  ...guidebookRoutes('/guidebook'),
   ...educatorRoutes('/educators'),
   {
     path: "*",
