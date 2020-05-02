@@ -40,14 +40,14 @@ To get a developer environment of the frontend you have to have previously insta
 
 ![Fork this repo](assets/fork-repo.png)
 
-Then clone your own fork of the repo, notice that at the header of your repo says forked from MintbeanHackathons. Copy the clone or download link, If you have not configured an ssh key click on use HTTPS and copy the link.
+Then clone your own fork of the repo, notice that at the header of your repo says forked from MintbeanHackathons. Copy the **clone or download** link, If you have not configured an ssh key click on use HTTPS and copy the link.
 
 ![Clone your repo](assets/clone-your-repo.png)
 
 Open a terminal or cmd and put 
 
 ```bash
-git clone git@github.com:carloshdelreal/MintbeanPlatform.git
+git clone <your clone or download link>
 
 ```
 
