@@ -53,7 +53,7 @@ git clone <your clone or download link>
 Then navigate to the MintbeanPlatform/frontend folder by
 
 ```bash
-cd MintbeanPlatform
+cd MintbeanPlatform/frontend
 ```
 
 And install the node packages by
