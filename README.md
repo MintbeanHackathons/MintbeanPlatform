@@ -29,3 +29,46 @@ Contributing to the platform is as easy as forking this project, then opening a 
 ### About Mintbean
 
 Mintbean is a software developer talent incubator. We work to accelerate the careers, skillsets, and professional networks of software developers globally.
+
+# How to get Started
+
+If you want to contribute to the styling, the content or add some new feature here is where you have to start. In this project we are Using [Vue.js](https://vuejs.org/) to build the frontend and [hapi](https://hapi.dev/) for the backend.
+
+## Frontend
+
+To get a developer environment of the frontend you have to have previously installed [node.js](https://nodejs.org/) then you have to fork this repository 
+
+![Fork this repo](assets/fork-repo.png)
+
+Then clone your own fork of the repo, notice that at the header of your repo says forked from MintbeanHackathons. Copy the clone or download link, If you have not configured an ssh key click on use HTTPS and copy the link.
+
+![Clone your repo](assets/clone-your-repo.png)
+
+Open a terminal or cmd and put 
+
+```bash
+git clone git@github.com:carloshdelreal/MintbeanPlatform.git
+
+```
+
+Then navigate to the MintbeanPlatform folder by
+
+```bash
+cd MintbeanPlatform
+```
+
+And install the node packages by
+
+```bash
+npm install
+```
+
+Once all the dependencies have been installed type
+
+```bash
+npm run serve
+```
+
+open your browser and go to the http://localhost:8080/ path
+
+voila!! you will see the frontend project running on your local machine
