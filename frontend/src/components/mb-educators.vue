@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.educators
+  .educators
     mb-markdown(:markdown="markdown")
 </template>
 

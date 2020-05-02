@@ -3,32 +3,32 @@
     h1 Scores for {{ email }}
     h2(v-if="this.errorMessage") {{ errorMessage }}
     div(v-for="score in scores" class="result")
-      div(class="section")
+      .section
         mb-a(:href="score.event.githubUrl" nofollow) 
           h2 {{score.event.title}}
           mb-a(:href="score.event.eventUrl" nofollow)
             p Original Event Listing
-      div(class="section")
+      .section
         p Date: {{ score.event.date }} | Status: {{ score.isScored ? "Scoring Complete" : "Scoring Pending" }}
-      div(class="section")
+      .section
         h3 Participant Details:
         p Github: 
           mb-a(:href="score.githubId" nofollow) {{ score.githubId }}
         p Email: 
           mb-a(:href="score.email" nofollow) {{ score.email }}
-      div(class="section")
+      .section
         h3 Submitted Project Details:
         p Source Code: 
           mb-a(:href="score.pullRequestUrl" nofollow) Click here
-      div(class="section")
+      .section
         h1 Final Score: {{ score.finalScore }}%
-      div.section
+      .section
         h2 Aesthetics: {{ score.aesthetics.score }}%
         p(style="white-space: pre-line") {{ score.aesthetics.comments || "No comments."}}
-      div.section
+      .section
         h2 Code Quality: {{ score.codeQuality.score }}%
         p(style="white-space: pre-line") {{ score.codeQuality.comments || "No comments." }}
-      div.section
+      .section
         h2 Code Review: {{ score.codeReview.score }}%
         p(style="white-space: pre-line") {{ score.codeReview.comments || "No comments." }}
 </template>
