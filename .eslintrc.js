@@ -1,5 +1,9 @@
 module.exports = {
     module: {
+        settings: {
+            "extends": "./node_modules/coding-standard/.pug-lintrc",
+            "disallowIdLiterals": null
+        },
         rules: [
             {
               enforce: 'pre',
