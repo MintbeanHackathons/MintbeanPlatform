@@ -11,7 +11,6 @@ This frontend project is built using Vue.js and custom CSS.
 * Node.js (we use `12.16.1`)
 * Postgres
 
-
 Open a terminal or cmd and put 
 
 ```bash
@@ -54,48 +53,3 @@ If you have solid or at least decent JavaScript fundamentals I strongly recommen
 
 You also can learn a lot from the [Official Vue Guide](https://vuejs.org/v2/guide/) and totally free. If you find another cool resource learn Vue, feel free to add it to this guide.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# frontend
-
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
