@@ -5,6 +5,7 @@ import Scores from "../views/Scores.vue";
 import Score from "../views/Score.vue";
 import Contributors from "../views/Contributors.vue";
 import NotFound from "../views/NotFound.vue";
+import { markdownPageRoutes } from '../md-pages';
 
 Vue.use(VueRouter);
 
@@ -30,6 +31,7 @@ const routes: Array<RouteConfig> = [
     name: "Contributors",
     component: Contributors,
   },
+  ...markdownPageRoutes('/'),
   {
     path: "*",
     name: "Not Found",

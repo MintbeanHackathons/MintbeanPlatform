@@ -1,0 +1,27 @@
+@import './mixins.scss';
+@import "./colors";
+@import "./dimensions";
+
+.markdown-page {
+  div, p {
+    text-align: justify;
+  }
+
+  h1,h2,h3,h4,h5,h6, .page-header {
+    text-align: left;
+  }
+
+  .page-header {
+    @include respond-to('small') {
+      max-width: 100%;
+    }
+    max-width: 75%;
+
+    background-color: $least-minty;
+    padding: vstep(5) hstep(5);
+  }
+
+  table, tr, td, th {
+    text-align: left;
+  }
+}

@@ -1,0 +1,76 @@
+@import "./colors";
+@import "./dimensions";
+@import "./mixins";
+
+//adjusting padding and margins for most elements
+* {
+  margin: 0;
+  padding: 0;
+  margin-bottom: vstep(1);
+  box-sizing: border-box;
+}
+
+a {
+  font-weight: bold;
+  color: $blue;
+
+  &:visited {
+    color: $less-blue;
+  }
+}
+
+// table styles
+
+table, th, td {
+  border: 2px solid $less-blue;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: vstep(2) hstep(2);
+}
+
+// header styles
+
+h1, h2, h3, h4, h5, h6, p, div, ul, ol, table {
+  margin-bottom: vstep(4);
+}
+
+h1 { font-size: vstep(7); }
+h2 { font-size: vstep(5); }
+h3 { font-size: vstep(3); }
+h4 { font-size: vstep(3); color: $light; }
+h5 { font-size: vstep(2); color: $light; }
+h6 { font-size: vstep(2); color: $lighter; }
+
+// list styles
+
+li {
+  text-align: left;
+  margin-left: hstep(5);
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $darkest;
+  width: 100%;
+
+  @include respond-to('small') {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+.content-container, #nav {
+  padding: vstep(3) hstep(0);
+  margin: auto;
+  max-width: 700px;
+}
+
+#nav {
+  a:visited {
+    color: $blue;
+  }
+}

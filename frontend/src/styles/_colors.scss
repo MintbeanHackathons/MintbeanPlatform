@@ -1,0 +1,20 @@
+@import './variables';
+
+$darkest: darken($basetone, 30%);
+$darker: darken($basetone, 20%);
+$dark: darken($basetone, 10%);
+$light: lighten($basetone, 25%);
+$lighter: lighten($basetone, 50%);
+$lightest: lighten($basetone, 80%);
+
+$least-minty: lighten($basemint, 35%);
+$less-minty: lighten($basemint, 20%);
+$minty: $basemint;
+$mintier: saturate($basemint, 20%);
+$mintiest: saturate($basemint, 30%);
+
+$least-blue: darken($baseblue, 15%);
+$less-blue: darken($baseblue, 5%);
+$blue: $baseblue;
+$bluer: lighten($baseblue, 5%);
+$bluest: lighten($baseblue, 15%);
