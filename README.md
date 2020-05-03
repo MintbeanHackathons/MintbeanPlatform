@@ -29,3 +29,60 @@ Contributing to the platform is as easy as forking this project, then opening a 
 ### About Mintbean
 
 Mintbean is a software developer talent incubator. We work to accelerate the careers, skillsets, and professional networks of software developers globally.
+
+# How to get Started
+
+If you want to contribute to the styling, the content or add some new feature here is where you have to start. In this project we are Using [Vue.js](https://vuejs.org/) to build the frontend and [hapi](https://hapi.dev/) for the backend.
+
+## Frontend
+
+To get a developer environment of the frontend you have to have previously installed [node.js](https://nodejs.org/) then you have to fork this repository 
+
+![Fork this repo](assets/fork-repo.png)
+
+Then clone your own fork of the repo, notice that at the header of your repo says forked from MintbeanHackathons. Copy the **clone or download** link, If you have not configured an ssh key click on use HTTPS and copy the link.
+
+![Clone your repo](assets/clone-your-repo.png)
+
+Open a terminal or cmd and put 
+
+```bash
+git clone <your clone or download link>
+
+```
+Then navigate to the MintbeanPlatform/frontend folder by
+
+```bash
+cd MintbeanPlatform/frontend
+```
+
+And install the node packages by
+
+```bash
+npm install
+```
+
+Once all the dependencies have been installed type
+
+```bash
+npm run serve
+```
+
+open your browser and go to the http://localhost:8080/ path
+
+voila!! you will see the frontend project running on your local machine
+
+### I don't know Vue.js
+
+Vue.js is one of the most popular frontend technologies, super intuitive and takes some of the best features from Angular and React. If you are not very familiar with this technology this is the opportunity to improve your skills. 
+
+If you are experienced on other technologies such as React of Angular, to pickup the Vue.js components Idea it is not going to take you more than a tenth of working hours.
+
+If you don't have much experience with JavaScript modern frameworks give it a try and you will be way more productive and capable of building amazing stuff.
+
+### Vue.js Tutorials and Sources
+
+If you have solid or at least decent JavaScript fundamentals I strongly recommend you this [Vue.js Step By Step Tutorial](https://laracasts.com/series/learn-vue-2-step-by-step).
+
+You also can learn a lot from the [Official Vue Guide](https://vuejs.org/v2/guide/) and totally free. If you find another cool resource learn Vue, feel free to add it to this guide.
+
