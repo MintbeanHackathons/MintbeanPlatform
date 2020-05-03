@@ -4,7 +4,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/scores">Legacy Scores</router-link> | 
       <router-link to="/guidebook">Guidebook</router-link> |
-      <router-link to="/educators">Educators</router-link>
+      <router-link to="/for-educators">For Educators</router-link>
     </div>
     <div class="content-container">
       <router-view />
