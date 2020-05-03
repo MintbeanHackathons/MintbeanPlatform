@@ -1,7 +1,5 @@
 # Mintbean Guidebook
 
-Mintbean Guidebook
-
 <div class="page-header">
   Learn about the programs that Mintbean offers, how to become a member, and how to get involved in the community.
 </div>

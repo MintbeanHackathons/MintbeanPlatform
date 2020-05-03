@@ -1,5 +1,9 @@
 # For Educators
 
+<div class="page-header">
+  How educators can benefit their students through collaborations with Mintbean.
+</div>
+
 Mintbean creates exceptional learning experiences that provide skill-building and career opportunities for its community members. Educators can leverage our professional community to deeply engage software development students in high-quality social learning.
 
 Our team has worked with educators across Canada and the United States to deliver interactive, community-based, gamified learning experiences where students experiment, explore and problem solve. 
