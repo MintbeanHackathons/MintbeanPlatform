@@ -9,11 +9,11 @@
 
 To get a developer environment of the backend you have to have installed [node.js](https://nodejs.org/) and [PostgreSQL](https://www.postgresql.org/). To install PostgreSQL I recommend you to follow this [PostgreSQL Tutorial](https://www.postgresqltutorial.com/install-postgresql/). Then you have to fork this repository 
 
-![Fork this repo](assets/fork-repo.png)
+![Fork this repo](../assets/fork-repo.png)
 
 Then clone your own fork of the repo, notice that at the header of your repo says forked from MintbeanHackathons. Copy the **clone or download** link, If you have not configured an ssh key click on use HTTPS and copy the link.
 
-![Clone your repo](assets/clone-your-repo.png)
+![Clone your repo](../assets/clone-your-repo.png)
 
 Open a terminal or cmd and put 
 
@@ -79,7 +79,7 @@ Again, don't forget the semicolon. lastly you have to create a password to your 
 postgres=#ALTER USER mintbean WITH PASSWORD 'mintbeanpass';
 ```
 
-![This is your SQL console after the process](assets/pgsql-console.png)
+![This is your SQL console after the process](../assets/pgsql-console.png)
 
 > Now That you have created a user with Create Database role and a password you are ready to come back to the backend console.
 
