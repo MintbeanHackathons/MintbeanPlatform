@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     img(alt="Vue logo" src="../assets/logo.png")
-    div.hello
+    .hello
       h1 Mintbean
       h3 A Software Developer Talent Incubator
       p We work to accelerate the careers, skillsets, and professional networks of software developers globally. 

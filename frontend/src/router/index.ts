@@ -4,7 +4,7 @@ import Home from "../views/Home.vue";
 import Scores from "../views/Scores.vue";
 import Score from "../views/Score.vue";
 import NotFound from "../views/NotFound.vue";
-import { guidebookRoutes } from '../views/Guidebook';
+import { markdownPageRoutes } from '../md-pages';
 
 Vue.use(VueRouter);
 
@@ -25,7 +25,7 @@ const routes: Array<RouteConfig> = [
     component: Score,
     props: true
   },
-  ...guidebookRoutes('/guidebook'),
+  ...markdownPageRoutes('/'),
   {
     path: "*",
     name: "Not Found",

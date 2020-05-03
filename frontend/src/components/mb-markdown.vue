@@ -1,5 +1,6 @@
 <template lang="pug">
-  div(v-html="markdown")
+  .markdown-page
+    div(v-html="markdown")
 </template>
 
 <script>
