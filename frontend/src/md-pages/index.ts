@@ -6,8 +6,8 @@
  * 
  */
 
-import MbEducators from "../../components/mb-educators.vue";
-const files = require.context('./markdown', true, /\.md$/);
+import MbMarkdown from "../components/mb-markdown.vue";
+const files = require.context('./', true, /\.md$/);
 
 const ensureLeadingSlash = (_string: string) => {
   let string = _string;
@@ -43,7 +43,7 @@ const createPath = (_root: string, _filename: string) => {
 }
 
 
-function educatorRoutes(root: string) {
+function markdownPageRoutes(root: string) {
   const routes = files
     .keys()
     .map(filename => ({
@@ -51,7 +51,7 @@ function educatorRoutes(root: string) {
       props: {
         markdown: files(filename)
       },
-      component: MbEducators
+      component: MbMarkdown
     }));
 
   console.log(routes);
@@ -59,5 +59,5 @@ function educatorRoutes(root: string) {
 }
 
 export {
-  educatorRoutes
+  markdownPageRoutes
 }
