@@ -102,7 +102,7 @@ Open a terminal or cmd and put
 git clone <your clone or download link>
 
 ```
-Then navigate to the MintbeanPlatform/backend folder by
+Then navigate to the `MintbeanPlatform/backend` folder by
 
 ```bash
 cd MintbeanPlatform/backend
@@ -140,13 +140,13 @@ To check the users that you have created you can put
 postgres=#\du
 ```
 
-And you will see a list of the postgresql users. To create the mintbean user that we are going to use for our backend just type
+To create the mintbean user that we are going to use for our backend just type the following and don't forget to put the semicolon at the end. 
 
 ```bash
 postgres=#CREATE USER mintbean;
 ```
 
-Don't forget to put the semicolon at the end. Once you have created the mintbean user you can check that it has been created by using the *\du* command.
+Once you have created the mintbean user you can check that it has been created by using the `\du` command.
 
 Now you have to add the role of Create Database to our mintbean user. you can to do that by typing:
 
@@ -189,7 +189,7 @@ Now that you have created you database you have to populate it with the correspo
 yarn sequelize db:migrate
 ```
 
-Then, if you want to have some data on the database, to work with type
+Then, if you want to have some data on the database to work with, just type
 
 ```bash
 yarn sequelize db:seed:all
@@ -199,9 +199,9 @@ Now you are ready to see the backend working, but before of that let's check tha
 
 ### Username, Password and Environment Variables
 
-If you open the backend/config/database.config.js file you will see the username and password that the backend is going to use to connect to the database, now you will notice that you can change the user name *mintbean* to whatever you want but you have to create that user on your postgresql database as was shown.
+If you open the `backend/config/database.config.js` file you will see the username and password that the backend is going to use to connect to the database, now you will notice that you can change the user name *mintbean* to whatever you want but you have to create that user on your postgresql database as was shown.
 
-In the other hand the password has been defined to an Environment Variable by *process.env.DB_PASSWORD*. To set properly the *DB_PASSWORD* variable you have to create or update the file backend/.env to contain the following two lines.
+In the other hand the password has been defined to an Environment Variable by `process.env.DB_PASSWORD`. To set properly the `DB_PASSWORD` variable you have to create or update the file `backend/.env` to contain the following two lines.
 
 ```
 NODE_ENV=development
