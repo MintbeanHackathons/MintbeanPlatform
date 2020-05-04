@@ -6,6 +6,8 @@
       router-link.mr-1.ml-1(to="/scores") Legacy Scores
       | |
       router-link.ml-1(to="/guidebook") Guidebook
+      | |
+      router-link.ml-1(to="/for-educators") For Educators
     .content-container
       router-view
     .accent-bar.top
