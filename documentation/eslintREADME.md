@@ -5,7 +5,7 @@ To use eslint-loader so that .vue files are automatically linted when saved in t
 
 ## eslint-plugin-pug
 This is for linting inline scripts in Pug files. To use:
-1. `npm i eslint-plugin-plug`
+1. `npm i eslint-plugin-pug`
 2. add to the .eslintrc file as a plugin.
 3. The extended configuration provides base rules, which can be overridden by the configuration that references it.
 4. Specify options and rules via a "pugLintConfig" option to package.json.
