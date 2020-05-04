@@ -22,7 +22,6 @@
 
 <style scoped>
 .result {
-  border: 1px solid grey;
   padding: 5px;
   margin-bottom: 16px;
 }
@@ -30,13 +29,6 @@
 
 <script>
 import { ApiService } from "../services/apiService";
-
-const getLinkedInUrl = username => {
-  const linkedIn = {
-    'sophyphreak': 'https://www.linkedin.com/in/sophyphreak/'
-  }
-  return linkedIn[username] || null
-}
 
 export default {
   name: "Contributors",
@@ -50,17 +42,8 @@ export default {
     (async () => {
       const apiService = new ApiService();
       try {
-        const { data } = await apiService.get(
-          `https://api.github.com/repos/MintbeanHackathons/MintbeanPlatform/contributors`
-        );
-        const contributors = data;
-        for (const contributor of contributors) {
-          const { data } = await apiService.get(contributor.url);
-          contributor.name = data.name;
-          contributor.portfolio = data.blog;
-          contributor.linkedIn = getLinkedInUrl(contributor.login)
-        }
-        this.contributors = contributors;
+        const { data } = await apiService.get('/api/v1/contributors');
+        this.contributors = data;
         this.errorMessage = null;
       } catch (e) {
         this.contributors = [];
