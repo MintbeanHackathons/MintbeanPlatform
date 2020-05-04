@@ -11,4 +11,8 @@ This is for linting inline scripts in Pug files. To use:
 4. Specify options and rules via a "pugLintConfig" option to package.json.
 For more information, see https://www.npmjs.com/package/pug-lint#extends or https://openbase.io/js/pug-lint.
 
+## Resources
+I used the following sources to set up the files and install dependencies:
+* DEV: https://dev.to/ferasdawod/setting-up-eslint-for-a-vuejs-project-using-vs-code-i54
 
+* FCC: https://www.freecodecamp.org/news/what-is-linting-and-how-can-it-save-you-time/
