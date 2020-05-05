@@ -11,6 +11,9 @@
     </div>
     <div class="accent-bar top"/>
     <div class="accent-bar bottom"/>
+    <div class="version">
+      <h6>Backend Version: {{version}}</h6>
+    </div>
   </div>
 </template>
 
@@ -27,7 +30,52 @@
   margin-bottom: 0;
   padding-bottom: 0;
 
-  &.top { top: 0; }
-  &.bottom { bottom: 0; background-color: $least-blue }
+  &.top {
+    top: 0;
+  }
+  &.bottom {
+    bottom: 0;
+    background-color: $least-blue;
+  }
+}
+
+.version {
+  margin: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  h6 {
+    color: rgb(117, 117, 117);
+  }
 }
 </style>
+
+<script>
+import { ApiService } from "./services/apiService";
+
+export default {
+  name: "App",
+  data() {
+    return {
+      version: null,
+      errorMessage: null
+    };
+  },
+  created() {
+    const apiService = new ApiService();
+
+    apiService
+      .get(`/api/v1/version`)
+      .then(res => (this.version = res.data))
+      .catch(({ request }) => {
+        this.version = "not found";
+        if (request.status === 404) {
+          this.errorMessage = "No version found.";
+        } else {
+          this.errorMessage = "Failed to fetch results.";
+        }
+      });
+  }
+};
+</script>
