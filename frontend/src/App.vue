@@ -68,14 +68,7 @@ export default {
     apiService
       .get(`/api/v1/version`)
       .then(res => (this.version = res.data))
-      .catch(({ request }) => {
-        this.version = "not found";
-        if (request.status === 404) {
-          this.errorMessage = "No version found.";
-        } else {
-          this.errorMessage = "Failed to fetch results.";
-        }
-      });
+      .catch(({ request }) => this.version = "Unknown");
   }
 };
 </script>
