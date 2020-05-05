@@ -3,7 +3,7 @@
 const consola = require('consola');
 const Hapi = require('@hapi/hapi');
 const HapiPino = require('hapi-pino');
-
+const { version } = require('./package.json');
 const { setRoutes } = require('./route');
 
 process.on('unhandledRejection', (err) => {
@@ -34,6 +34,12 @@ async function start () {
         }
       }
     }
+  });
+
+  server.route({
+    method: 'GET',
+    path: '/api/v1/version',
+    handler: (request, h) => version
   });
 
   server.events.on('log', (event, tags) => {
