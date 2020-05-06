@@ -1,9 +1,7 @@
 const axios = require('axios');
+const linkedIn = require('../shared/contributors')
 
 const getLinkedInUrl = username => {
-    const linkedIn = {
-        'sophyphreak': 'https://www.linkedin.com/in/sophyphreak/'
-    }
     return linkedIn[username]
 }
 
