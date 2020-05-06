@@ -39,18 +39,18 @@ export default {
     };
   },
   created() {
-    (async () => {
-      const apiService = new ApiService();
-      try {
-        const { data } = await apiService.get('/api/v1/contributors');
-        this.contributors = data;
-        this.errorMessage = null;
-      } catch (e) {
-        this.contributors = [];
-        this.errorMessage = "Failed to fetch contributors.";
-        console.log(e);
-      }
-    })();
+    new ApiService()
+    .get('/api/v1/contributors')
+    .then(({ data }) => {
+      this.contributors = data;
+      this.errorMessage = null;
+    })
+    .catch(e => {
+      console.error(e);
+      this.contributors = [];
+      this.errorMessage = "Failed to fetch contributors";
+    })
+  
   },
 };
 </script>
