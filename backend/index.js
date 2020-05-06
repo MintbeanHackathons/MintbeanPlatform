@@ -39,7 +39,7 @@ async function start () {
   server.route({
     method: 'GET',
     path: '/api/v1/version',
-    handler: (request, h) => version
+    handler: () => version
   });
 
   server.events.on('log', (event, tags) => {
