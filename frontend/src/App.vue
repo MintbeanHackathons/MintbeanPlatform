@@ -8,6 +8,9 @@
     </div>
     <div class="content-container">
       <router-view />
+      <div class="version" :v-if="frontendVersion && backendVersion">
+        <p>Frontend: {{frontendVersion}} | Backend: {{backendVersion}}</p>
+      </div>
     </div>
     <div class="accent-bar top"/>
     <div class="accent-bar bottom"/>
@@ -27,7 +30,49 @@
   margin-bottom: 0;
   padding-bottom: 0;
 
-  &.top { top: 0; }
-  &.bottom { bottom: 0; background-color: $least-blue }
+  &.top {
+    top: 0;
+  }
+  &.bottom {
+    bottom: 0;
+    background-color: $least-blue;
+  }
+}
+
+.version {
+  text-align: center;
+  color: $lightest;
 }
 </style>
+
+<script>
+import { VersionService } from "./services/versionService";
+import { version } from '../package.json'
+
+export default {
+  name: "App",
+  data() {
+    return {
+      version: null,
+      frontendVersion: null,
+      backendVersion: null,
+      errorMessage: null
+    };
+  },
+  created() {
+    const versionService = new VersionService();
+
+    versionService.frontendVersion()
+      .then(version => this.frontendVersion = version)
+      .catch(err => {
+        this.frontendVersion = "Unknown";
+      });
+
+    versionService.backendVersion()
+      .then(version => this.backendVersion = version)
+      .catch(err => {
+        this.backendVersion = "Unknown";
+      });
+  }
+};
+</script>
