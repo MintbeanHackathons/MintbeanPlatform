@@ -1,3 +1,4 @@
+const Boom = require('@hapi/boom');
 const axios = require('axios');
 const linkedIn = require('../shared/contributors')
 
