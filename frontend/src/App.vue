@@ -12,7 +12,8 @@
     <div class="accent-bar top"/>
     <div class="accent-bar bottom"/>
     <div class="version">
-      <h6>Backend Version: {{version}}</h6>
+      <p>Frontend Version: {{frontendVersion}}</p>
+      <p>Backend Version: {{backendVersion}}</p>
     </div>
   </div>
 </template>
@@ -45,30 +46,36 @@
   bottom: 0;
   right: 0;
 
-  h6 {
+  p {
     color: rgb(117, 117, 117);
+    font-weight: 900;
   }
 }
 </style>
 
 <script>
 import { ApiService } from "./services/apiService";
+import { version } from '../package.json'
 
 export default {
   name: "App",
   data() {
     return {
       version: null,
+      frontendVersion: null,
+      backendVersion: null,
       errorMessage: null
     };
   },
   created() {
     const apiService = new ApiService();
+    
+    this.frontendVersion = version;
 
     apiService
       .get(`/api/v1/version`)
-      .then(res => (this.version = res.data))
-      .catch(({ request }) => this.version = "Unknown");
+      .then(res => (this.backendVersion = res.data))
+      .catch(({ request }) => this.backendVersion = "Unknown");
   }
 };
 </script>
