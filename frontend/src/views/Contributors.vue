@@ -12,11 +12,11 @@
         tr
           td {{ contributor.name }}
           td 
-            a(:href="contributor.html_url") {{contributor.login}}
+            mb-a(:href="contributor.html_url" :v-if="contributor.login") {{contributor.login}}
           td 
-            a(:href="contributor.portfolio") {{ contributor.portfolio && 'portfolio' }}
+            mb-a(:href="contributor.portfolio" :v-if="contributor.portfolio") Portfolio
           td
-            a(:href="contributor.linkedin") {{ contributor.linkedin && 'linkedin' }}
+            mb-a(:href="contributor.linkedin" :v-if="contributor.portfolio") LinkedIn
 
 </template>
 
