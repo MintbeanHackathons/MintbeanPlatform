@@ -8,13 +8,12 @@
     </div>
     <div class="content-container">
       <router-view />
+      <div class="version" :v-if="frontendVersion && backendVersion">
+        <p>Frontend: {{frontendVersion}} | Backend: {{backendVersion}}</p>
+      </div>
     </div>
     <div class="accent-bar top"/>
     <div class="accent-bar bottom"/>
-    <div class="version">
-      <p>Frontend Version: {{frontendVersion}}</p>
-      <p>Backend Version: {{backendVersion}}</p>
-    </div>
   </div>
 </template>
 
@@ -41,20 +40,13 @@
 }
 
 .version {
-  margin: 10px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-
-  p {
-    color: rgb(117, 117, 117);
-    font-weight: 900;
-  }
+  text-align: center;
+  color: $lightest;
 }
 </style>
 
 <script>
-import { ApiService } from "./services/apiService";
+import { VersionService } from "./services/versionService";
 import { version } from '../package.json'
 
 export default {
@@ -68,14 +60,19 @@ export default {
     };
   },
   created() {
-    const apiService = new ApiService();
-    
-    this.frontendVersion = version;
+    const versionService = new VersionService();
 
-    apiService
-      .get(`/api/v1/version`)
-      .then(res => (this.backendVersion = res.data))
-      .catch(({ request }) => this.backendVersion = "Unknown");
+    versionService.frontendVersion()
+      .then(version => this.frontendVersion = version)
+      .catch(err => {
+        this.frontendVersion = "Unknown";
+      });
+
+    versionService.backendVersion()
+      .then(version => this.backendVersion = version)
+      .catch(err => {
+        this.backendVersion = "Unknown";
+      });
   }
 };
 </script>
