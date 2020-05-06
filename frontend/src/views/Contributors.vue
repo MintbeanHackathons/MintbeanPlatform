@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     h1 Contributors
-    h2(v-if="this.errorMessage") {{ errorMessage }}
+    p(v-if="this.errorMessage") {{ errorMessage }}
     div(v-for="contributor in contributors" class="result")
       table(style='width:100%')
         tr
