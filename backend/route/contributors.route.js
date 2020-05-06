@@ -4,7 +4,7 @@ const getLinkedInUrl = username => {
     const linkedIn = {
         'sophyphreak': 'https://www.linkedin.com/in/sophyphreak/'
     }
-    return linkedIn[username] || null
+    return linkedIn[username]
 }
 
 // Get all contributors
