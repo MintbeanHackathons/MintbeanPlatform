@@ -12,7 +12,7 @@ process.on('unhandledRejection', (err) => {
 
 async function start () {
   const server = Hapi.server({
-    host: process.env.HOST || '127.0.0.1',
+    host: process.env.HOST || '0.0.0.0',
     port: process.env.PORT || 3000,
     router: {
       stripTrailingSlash: true

@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  # NodeJS Backend Server
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ./development.Dockerfile
+    volumes:
+      - ./backend:/app
+      # The following line makes node_modules a private volume instead of synced to the folder
+      - /app/node_modules/
+    ports:
+      - "3000:3000"
