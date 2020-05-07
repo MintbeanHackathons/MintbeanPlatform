@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav" :class="align">
       <router-link to="/">Home</router-link> |
       <router-link to="/scores">Legacy Scores</router-link> | 
       <router-link to="/guidebook">Guidebook</router-link> |
@@ -38,6 +38,9 @@
     background-color: $least-blue;
   }
 }
+.center {
+  text-align: center;
+}
 
 .version {
   text-align: center;
@@ -51,6 +54,11 @@ import { version } from '../package.json'
 
 export default {
   name: "App",
+  computed: {
+    align() {
+      return (this.$route.path === '/') ? 'center' : '';
+    }
+  },
   data() {
     return {
       version: null,
