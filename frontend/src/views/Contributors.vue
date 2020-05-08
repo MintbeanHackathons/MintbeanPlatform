@@ -13,15 +13,15 @@
         tbody
           tr(v-for="contributor in contributors" class="result")
             td {{ contributor.name }}
-            td 
-              mb-a(:href="contributor.html_url" v-if="contributor.login") {{contributor.login}}
-              partial(v-else) n/a
-            td
-              mb-a(:href="contributor.portfolio" v-if="contributor.portfolio") Portfolio
-              partial(v-else) n/a
-            td
-              mb-a(:href="contributor.linkedIn" v-if="contributor.linkedIn") LinkedIn
-              partial(v-else) n/a
+            td(v-if="contributor.login")
+              mb-a(:href="contributor.html_url") {{contributor.login}}
+            td(v-else) n/a
+            td(v-if="contributor.portfolio")
+              mb-a(:href="contributor.portfolio" ) Portfolio
+            td(v-else) n/a
+            td(v-if="contributor.linkedIn")
+              mb-a(:href="contributor.linkedIn") LinkedIn
+            td(v-else) n/a
 
 </template>
 
