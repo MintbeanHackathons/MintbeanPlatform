@@ -15,10 +15,13 @@
             td {{ contributor.name }}
             td 
               mb-a(:href="contributor.html_url" v-if="contributor.login") {{contributor.login}}
+              partial(v-else) n/a
             td
               mb-a(:href="contributor.portfolio" v-if="contributor.portfolio") Portfolio
+              partial(v-else) n/a
             td
               mb-a(:href="contributor.linkedIn" v-if="contributor.linkedIn") LinkedIn
+              partial(v-else) n/a
 
 </template>
 
