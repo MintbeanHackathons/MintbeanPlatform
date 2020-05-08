@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     h1 Contributors
-    p(v-if="this.errorMessage") {{ errorMessage }}
+    p(v-if="this.errorMessage" class="error") {{ errorMessage }}
     div
       table(style='width:100%')
         thead
@@ -22,48 +22,66 @@
 
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../styles/dimensions";
+
 .result {
-  padding: 5px;
-  margin-bottom: 16px;
+  padding: vstep(1) hstep(1);
+  margin-bottom: hstep(2);
 }
 
-@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
+.error {
+}
 
-	table, thead, tbody, th, td, tr { 
-		display: block; 
-	}
-	
-	thead tr { 
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-	
-	tr { border: 1px solid #ccc; }
-	
-	td { 
-		border: none;
-		border-bottom: 1px solid #eee; 
-		position: relative;
-		padding-left: 50%; 
-	}
-	
-	td:before { 
-		position: absolute;
-		top: 6px;
-		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
-		white-space: nowrap;
-	}
-	
-	td:nth-of-type(1):before { content: "Name"; }
-	td:nth-of-type(2):before { content: "Github"; }
-	td:nth-of-type(3):before { content: "Portfolio"; }
-	td:nth-of-type(4):before { content: "LinkedIn"; }
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  td:nth-of-type(1):before {
+    content: "Name";
+  }
+  td:nth-of-type(2):before {
+    content: "Github";
+  }
+  td:nth-of-type(3):before {
+    content: "Portfolio";
+  }
+  td:nth-of-type(4):before {
+    content: "LinkedIn";
+  }
 }
 </style>
 
@@ -80,17 +98,16 @@ export default {
   },
   created() {
     new ApiService()
-    .get('/api/v1/contributors')
-    .then(({ data }) => {
-      this.contributors = data;
-      this.errorMessage = null;
-    })
-    .catch(e => {
-      console.error(e);
-      this.contributors = [];
-      this.errorMessage = "Failed to fetch contributors";
-    })
-  
+      .get("/api/v1/contributors")
+      .then(({ data }) => {
+        this.contributors = data;
+        this.errorMessage = null;
+      })
+      .catch((e) => {
+        console.error(e);
+        this.contributors = [];
+        this.errorMessage = "Failed to fetch contributors";
+      });
   },
 };
 </script>
