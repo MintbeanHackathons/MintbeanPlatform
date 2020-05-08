@@ -33,21 +33,19 @@
   margin-bottom: hstep(2);
 }
 
-.error {
+tr:nth-of-type(odd) {
+  background: #eee;
 }
-
-tr:nth-of-type(odd) { 
-  background: #eee; 
+th {
+  background: #333;
+  color: white;
+  font-weight: bold;
 }
-th { 
-  background: #333; 
-  color: white; 
-  font-weight: bold; 
-}
-td, th { 
-  padding: 6px; 
-  border: 1px solid #ccc; 
-  text-align: left; 
+td,
+th {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: left;
 }
 
 @media only screen and (max-width: 760px),
@@ -59,7 +57,7 @@ td, th {
   td,
   tr {
     display: block;
-    border: none
+    border: none;
   }
 
   thead tr {
@@ -111,7 +109,7 @@ export default {
   data() {
     return {
       contributors: [],
-      errorMessage: null,
+      errorMessage: null
     };
   },
   created() {
@@ -121,11 +119,11 @@ export default {
         this.contributors = data;
         this.errorMessage = null;
       })
-      .catch((e) => {
+      .catch(e => {
         console.error(e);
         this.contributors = [];
         this.errorMessage = "Failed to fetch contributors";
       });
-  },
+  }
 };
 </script>
