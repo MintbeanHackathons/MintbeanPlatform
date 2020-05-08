@@ -42,6 +42,7 @@
   td,
   tr {
     display: block;
+    border: none
   }
 
   thead tr {
