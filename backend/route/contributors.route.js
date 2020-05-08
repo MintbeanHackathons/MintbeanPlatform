@@ -20,7 +20,9 @@ module.exports = (server) => {
                 for (const contributor of contributors) {
                     const { data } = await axios.get(contributor.url);
                     contributor.name = data.name;
-                    contributor.portfolio = data.blog;
+                    if (prefixHttp(data.blog)) {
+                        contributor.portfolio = data.blog;
+                    }
                     contributor.linkedIn = getLinkedInUrl(contributor.login);
                 }
                 return contributors;
@@ -30,3 +32,5 @@ module.exports = (server) => {
         }
     });
 };
+
+const prefixHttp = url => url.toLowerCase().startsWith('http://') || url.toLowerCase().startsWith('https://')
