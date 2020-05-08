@@ -4,9 +4,9 @@ WORKDIR /app
 
 # Copy and install dependencies
 COPY package*.json yarn.lock ./
-RUN npm install
+RUN yarn install
 
-EXPOSE 3000
-CMD npm start
+EXPOSE 3001
+CMD yarn start
 
 # VOLUMES are handled by docker-compose.yml

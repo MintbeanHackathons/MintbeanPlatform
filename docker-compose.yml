@@ -4,10 +4,28 @@ services:
   backend:
     build:
       context: ./backend
-      dockerfile: ./development.Dockerfile
+      dockerfile: ./Dockerfile
     volumes:
       - ./backend:/app
       # The following line makes node_modules a private volume instead of synced to the folder
       - /app/node_modules/
     ports:
       - "3000:3000"
+    networks:
+      - mintbean-network
+  # Vue-CLI Frontend livereload
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./frontend:/app
+      # The following line makes node_modules a private volume instead of synced to the folder
+      - /app/node_modules/
+    ports:
+      - "3001:3001"
+    networks:
+      - mintbean-network
+networks:
+  mintbean-network:
+    driver: bridge
