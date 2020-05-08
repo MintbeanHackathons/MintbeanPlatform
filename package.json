@@ -1,0 +1,13 @@
+{
+  "name": "mintbean-root",
+  "version": "1.1.0",
+  "private": true,
+  "scripts": {
+    "prod.up": "echo 'Not Implemented'",
+    "prod.build": "echo 'Not Implemented'",
+    "prod.down": "echo 'Not Implemented'",
+    "dev.up": "docker-compose -f docker-compose.base.yml -f docker-compose.development.yml up -d",
+    "dev.build": "docker-compose -f docker-compose.base.yml -f docker-compose.development.yml build --no-cache",
+    "dev.down": "docker-compose -f docker-compose.base.yml -f docker-compose.development.yml down"
+  }
+}
