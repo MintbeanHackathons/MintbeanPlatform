@@ -20,9 +20,7 @@ module.exports = (server) => {
                 for (const contributor of contributors) {
                     const { data } = await axios.get(contributor.url);
                     contributor.name = data.name;
-                    if (prefixHttp(data.blog)) {
-                        contributor.portfolio = data.blog;
-                    }
+                    contributor.portfolio = addHttpPrefix(data.blog);
                     contributor.linkedIn = getLinkedInUrl(contributor.login);
                 }
                 return contributors;
@@ -33,4 +31,11 @@ module.exports = (server) => {
     });
 };
 
-const prefixHttp = url => url.toLowerCase().startsWith('http://') || url.toLowerCase().startsWith('https://')
+const addHttpPrefix = url => {
+    if (
+        url.toLowerCase().startsWith('http://') || url.toLowerCase().startsWith('https://')
+    ) {
+        return 'http://' + url
+    }
+    return url
+}
