@@ -32,6 +32,9 @@ module.exports = (server) => {
 };
 
 const addHttpPrefix = url => {
+    if (!url) {
+        return url
+    }
     if (
         url.toLowerCase().startsWith('http://') || url.toLowerCase().startsWith('https://')
     ) {
