@@ -14,11 +14,11 @@
           tr(v-for="contributor in contributors" class="result")
             td {{ contributor.name }}
             td 
-              mb-a(:href="contributor.html_url" :v-if="contributor.login") {{contributor.login}}
-            td 
-              mb-a(:href="contributor.portfolio" :v-if="contributor.portfolio") Portfolio
+              mb-a(:href="contributor.html_url" v-if="contributor.login") {{contributor.login}}
             td
-              mb-a(:href="contributor.linkedIn" :v-if="contributor.linkedIn") LinkedIn
+              mb-a(:href="contributor.portfolio" v-if="contributor.portfolio") Portfolio
+            td
+              mb-a(:href="contributor.linkedIn" v-if="contributor.linkedIn") LinkedIn
 
 </template>
 
