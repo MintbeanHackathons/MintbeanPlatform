@@ -9,6 +9,7 @@
 * [CareerHack Hackathons](/guidebook/careerhack-hackathons)
 * [Weekend Workshops](/guidebook/weekend-workshops)
 * [Collaboration Events](/guidebook/collaboration-events)
+* [Style Guide](/guidebook/style-guide)
 * [Volunteer & Open Source Opportunities](/guidebook/volunteer-opportunities)
 * Mintbean Hiresides (Soon!!)
 * Job Opportunities (Soon!!)

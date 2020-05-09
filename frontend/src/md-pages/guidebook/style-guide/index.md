@@ -2,7 +2,9 @@
 
 The purpose of this page is to help our collaborators to generate content following our design guideline.
 
-![](./collage.png)
+<figure>
+  <img src="../../../assets/logo.png">
+</figure>
 
 ## Brand Guiding Statements
 #### Mission
@@ -48,7 +50,9 @@ Box Shadows for element shading are recommended to be under `5px` in any directi
 ## Icons
 This organizations primary logo is the following image:
 
-![](./mintbean-logo.png)
+<figure>
+  <img src="../../../assets/mintbean-logo.png">
+</figure>
 
 Plain png, png with a removed background, and svg files can be found in `MintbanPlatform/frontend/src/md-pages/style-guide/` as...
 * `mintbean-logo.png`
