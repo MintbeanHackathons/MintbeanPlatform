@@ -3,7 +3,7 @@ require('dotenv').config(); // this is important!
 const defaults = {
   username: 'mintbean',
   password: process.env.DB_PASSWORD,
-  host: '127.0.0.1',
+  host: process.env.DB_HOST || '127.0.0.1',
   dialect: 'postgres',
   operatorsAliases: false
 };

@@ -10,7 +10,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest",
     "sql": "sequelize-cli",
-    "pristine": "NODE_ENV=development server/scripts/pristine.sh"
+    "pristine": "NODE_ENV=development scripts/pristine.sh"
   },
   "lint-staged": {
     "*.{js}": "yarn lint"

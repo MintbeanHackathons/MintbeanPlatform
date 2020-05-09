@@ -1,5 +1,22 @@
 version: "3.3"
 services:
+  backend:
+    environment:
+      DB_HOST: db
+      DB_PASSWORD: password
+    # Run `yarn pristine` and then run `yarn dev`
+    command: bash -c "yarn sql db:migrate && yarn dev"
   nginx:
     ports:
       - "3000:80"
+  db:
+    environment:
+      POSTGRES_USER: mintbean
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mintbean_development
+    volumes:
+      # This is where the datafiles get saved in development
+      - ./db/data:/var/lib/postgresql/data
+    ports:
+      # In development, we want to be able to run psql commands easily
+      - 5432:5432

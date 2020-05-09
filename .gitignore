@@ -2,3 +2,5 @@
 /package-lock.json
 /yarn.lock
 
+# db volume for docker
+/db/data

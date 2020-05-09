@@ -38,6 +38,11 @@ services:
       - "3000:80"
     networks:
       - mintbean-network
+  db:
+    image: postgres
+    restart: always
+    networks:
+      - mintbean-network
 
 networks:
   mintbean-network:
