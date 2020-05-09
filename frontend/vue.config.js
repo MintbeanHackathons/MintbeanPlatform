@@ -11,7 +11,8 @@ module.exports = {
           pathRewrite: {'^/api/v1': '/api/v1'},
           logLevel: 'debug' 
       },
-    }
+    },
+    disableHostCheck: true // required for nginx to recognize the devserver in local dev mode
   },
   chainWebpack: config => {
     // markdown Loader

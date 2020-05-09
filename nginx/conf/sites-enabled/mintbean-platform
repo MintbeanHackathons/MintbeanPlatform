@@ -1,0 +1,25 @@
+upstream docker-backend {
+  server backend:3000;
+}
+
+upstream docker-frontend {
+  server frontend:3001;
+}
+
+server {
+  listen 80 default_server;
+
+  location /api/v1 {
+    proxy_pass http://docker-backend;
+  }
+
+  location / {
+    proxy_pass http://docker-frontend;
+  }
+
+  # listen 443 ssl; # managed by Certbot
+  # ssl_certificate /etc/letsencrypt/live/staging.mintbean.io/fullchain.pem; # managed by Certbot
+  # ssl_certificate_key /etc/letsencrypt/live/staging.mintbean.io/privkey.pem; # managed by Certbot
+  # include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+  # ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
