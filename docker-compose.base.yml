@@ -2,6 +2,8 @@ version: "3.3"
 services:
   # NodeJS Backend Server
   backend:
+    depends_on:
+      - db
     build:
       context: ./backend
       dockerfile: ./Dockerfile
@@ -26,21 +28,39 @@ services:
     depends_on:
       - backend
       - frontend
+      - keycloak
     build:
       context: ./nginx
       dockerfile: ./Dockerfile
     volumes:
-      # - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      # - ./nginx/sites-enabled:/etc/nginx/sites-enabled:ro
+      - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf/sites-enabled:/etc/nginx/sites-enabled:ro
       # Disable nginx html
       - /etc/nginx/
-    ports:
-      - "3000:80"
+    # ports are defined in the environment-specific docker-compose file
     networks:
       - mintbean-network
   db:
-    image: postgres
+    build:
+      context: ./db
+      dockerfile: ./Dockerfile
     restart: always
+    networks:
+      - mintbean-network
+  keycloak:
+    image: quay.io/keycloak/keycloak:10.0.1
+    environment:
+      DB_VENDOR: POSTGRES
+      DB_ADDR: db
+      DB_DATABASE: keycloak
+      DB_USER: keycloak
+      DB_PASSWORD: password
+      DB_SCHEMA: public
+      KEYCLOAK_USER: keycloak
+      KEYCLOAK_PASSWORD: password
+      # KEYCLOAK_FRONTEND_URL: local.auth.mintbean.io
+      KEYCLOAK_HOSTNAME: local.auth.mintbean.io
+      KEYCLOAK_HTTP_PORT: 3000
     networks:
       - mintbean-network
 
