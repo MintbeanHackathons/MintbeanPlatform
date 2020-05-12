@@ -1,18 +1,25 @@
-upstream docker-backend {
-  server backend:3000;
-}
-
 upstream docker-frontend {
+  # upstream server domain is the same as the service's name inside docker-compose.yml
+  # upstream server port is the same as the exposed port inside docker-compose.yml
   server frontend:3001;
 }
 
+upstream docker-backend {
+  # upstream server domain is the same as the service's name inside docker-compose.yml
+  # upstream server port is the same as the exposed port inside docker-compose.yml
+  server backend:3002;
+}
+
 upstream docker-keycloak {
+  # upstream server domain is the same as the service's name inside docker-compose.yml
+  # upstream server port is the same as the exposed port inside docker-compose.yml
   server keycloak:8080;
 }
 
 server {
-  server_name auth.local.mintbean.io;
-  listen 80;
+  # server name here needs to be added to your Hostsfile
+  server_name auth.localhost;
+  listen 3000;
 
   location / {
     proxy_pass http://docker-keycloak;
@@ -20,8 +27,9 @@ server {
 }
 
 server {
-  server_name local.mintbean.io;
-  listen 80;
+  # server name here needs to be added to your Hostsfile
+  server_name localhost;
+  listen 3000;
 
   location /api/v1 {
     proxy_pass http://docker-backend;

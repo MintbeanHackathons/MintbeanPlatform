@@ -14,6 +14,7 @@
     "dev.psql": "PGPASSWORD=password psql -U mintbean -d mintbean_development -h 0.0.0.0",
     "dev.sql": "docker-compose -f docker-compose.base.yml -f docker-compose.development.yml exec backend yarn sql",
     "dev.seed": "docker-compose -f docker-compose.base.yml -f docker-compose.development.yml exec backend yarn sql db:seed:all",
-    "clean": "./scripts/docker-rm-all.sh"
+    "dev.auth.init": "yarn dev exec keycloak /opt/jboss/keycloak/bin/add-user-keycloak.sh -u keycloak -p password",
+    "dev.clean": "./scripts/docker-rm-all.sh"
   }
 }

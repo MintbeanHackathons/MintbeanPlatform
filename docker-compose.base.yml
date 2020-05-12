@@ -11,9 +11,6 @@ services:
       - ./backend:/app
       # The following line makes node_modules a private volume instead of synced to the folder
       - /app/node_modules/
-    networks:
-      - mintbean-network
-  # Vue-CLI Frontend livereload
   frontend:
     build:
       context: ./frontend
@@ -22,8 +19,6 @@ services:
       - ./frontend:/app
       # The following line makes node_modules a private volume instead of synced to the folder
       - /app/node_modules/
-    networks:
-      - mintbean-network
   nginx:
     depends_on:
       - backend
@@ -37,33 +32,16 @@ services:
       - ./nginx/conf/sites-enabled:/etc/nginx/sites-enabled:ro
       # Disable nginx html
       - /etc/nginx/
-    # ports are defined in the environment-specific docker-compose file
-    networks:
-      - mintbean-network
   db:
     build:
       context: ./db
       dockerfile: ./Dockerfile
     restart: always
-    networks:
-      - mintbean-network
+    volumes:
+      - "./db/data:/var/lib/postgresql/data"
   keycloak:
     image: quay.io/keycloak/keycloak:10.0.1
     environment:
       DB_VENDOR: POSTGRES
-      DB_ADDR: db
       DB_DATABASE: keycloak
-      DB_USER: keycloak
-      DB_PASSWORD: password
       DB_SCHEMA: public
-      KEYCLOAK_USER: keycloak
-      KEYCLOAK_PASSWORD: password
-      # KEYCLOAK_FRONTEND_URL: local.auth.mintbean.io
-      KEYCLOAK_HOSTNAME: local.auth.mintbean.io
-      KEYCLOAK_HTTP_PORT: 3000
-    networks:
-      - mintbean-network
-
-networks:
-  mintbean-network:
-    driver: bridge

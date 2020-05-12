@@ -27,6 +27,7 @@
     "consola": "^2.11.3",
     "dotenv": "^8.2.0",
     "faker": "^4.1.0",
+    "hapi-auth-keycloak": "^5.1.0",
     "hapi-pino": "^8.0.0",
     "pg": "^8.0.2",
     "sequelize": "^5.21.6",

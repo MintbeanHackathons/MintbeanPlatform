@@ -3,6 +3,8 @@
 const consola = require('consola');
 const Hapi = require('@hapi/hapi');
 const HapiPino = require('hapi-pino');
+const authKeycloak = require("hapi-auth-keycloak");
+
 const { version } = require('./package.json');
 const { setRoutes } = require('./route');
 
@@ -13,7 +15,7 @@ process.on('unhandledRejection', (err) => {
 async function start () {
   const server = Hapi.server({
     host: process.env.HOST || '0.0.0.0',
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 3002,
     router: {
       stripTrailingSlash: true
     },
@@ -44,6 +46,19 @@ async function start () {
 
   server.events.on('log', (event, tags) => {
     consola.log(event);
+  });
+
+  await server.register({
+    plugin: authKeycloak
+  });
+
+  server.auth.strategy("keycloak-jwt", "keycloak-jwt", {
+    // realmUrl: "https://localhost:8080/auth/realms/testme",
+    realmUrl: "http://local.auth.mintbean.io:3000/auth/realms/mintbean.io",
+    clientId: "mintbean-backend",
+    minTimeBetweenJwksRequests: 15,
+    cache: true,
+    userInfo: ["name", "email"],
   });
 
   await server.register({
