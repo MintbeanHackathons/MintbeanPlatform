@@ -7,8 +7,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "frontend.dev": "DEVSERVER_PROXY_TARGET=http://localhost:3000 vue-cli-service serve",
-    "fullstack.dev": "DEVSERVER_PROXY_TARGET=http://localhost:3002 vue-cli-service serve"
+    "dev.frontend": "PORT=3010 DEVSERVER_PROXY_TARGET=http://localhost:3000 vue-cli-service serve",
+    "dev.fullstack": "PORT=3010 DEVSERVER_PROXY_TARGET=http://localhost:3011 vue-cli-service serve"
   },
   "dependencies": {
     "axios": "^0.19.2",

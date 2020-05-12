@@ -2,7 +2,7 @@
 module.exports = {
   // options...
   devServer: {
-    port: 3001,
+    port: process.env.PORT || 3001,
     proxy: {
       '^/api/v1': {
           target: process.env.DEVSERVER_PROXY_TARGET || 'http://backend:3000',

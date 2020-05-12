@@ -21,8 +21,6 @@ services:
       - /app/node_modules/
   nginx:
     depends_on:
-      - backend
-      - frontend
       - keycloak
     build:
       context: ./nginx
