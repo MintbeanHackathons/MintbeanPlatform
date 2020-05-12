@@ -22,5 +22,13 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "prettier-vue/prettier": [
+            "error",
+            {
+              "singleQuote": "true",
+              "semi": "false",
+              "trailingComma": "es5"
+            }
+          ]
     }
 }
