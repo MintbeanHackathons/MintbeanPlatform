@@ -33,6 +33,7 @@ DOCUMENTATION
 - importing default keycloak json
 - Don't do `sudo`
 - note that Frontend dev mode puts frontend at localhost:3001
+- note that Fullstack dev mode puts frontend at localhost:3001 and backend at localhost:3002
 
 RESOURCES
 - Keycloak docs for server admin: https://www.keycloak.org/docs/latest/server_admin/index.html
