@@ -6,7 +6,8 @@
     "start": "vue-cli-service serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "frontend.dev": "DEVSERVER_PROXY_TARGET=http://localhost:3000 vue-cli-service serve"
   },
   "dependencies": {
     "axios": "^0.19.2",

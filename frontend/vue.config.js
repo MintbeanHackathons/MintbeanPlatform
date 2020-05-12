@@ -5,7 +5,7 @@ module.exports = {
     port: 3001,
     proxy: {
       '^/api/v1': {
-          target: 'http://backend:3000',
+          target: process.env.DEVSERVER_PROXY_TARGET || 'http://backend:3000',
           changeOrigin: true,
           secure:false,
           pathRewrite: {'^/api/v1': '/api/v1'},
