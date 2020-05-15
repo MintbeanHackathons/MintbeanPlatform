@@ -47,6 +47,7 @@
 
 <script>
 import { VersionService } from "./services/versionService";
+import { AuthService } from "./services/authService";
 import { version } from '../package.json'
 
 export default {
@@ -61,18 +62,44 @@ export default {
   },
   created() {
     const versionService = new VersionService();
+    const authService = new AuthService();
 
-    versionService.frontendVersion()
-      .then(version => this.frontendVersion = version)
-      .catch(err => {
-        this.frontendVersion = "Unknown";
-      });
+    (async () => {
+      debugger;
+      let isAuthenticated;
+      let user;
 
-    versionService.backendVersion()
-      .then(version => this.backendVersion = version)
-      .catch(err => {
-        this.backendVersion = "Unknown";
-      });
+      try {
+        isAuthenticated = await authService.checkAuth();
+      } catch (e) {
+        console.error('Failed to initialize Auth Service', e);
+        return;
+      }
+
+      if (isAuthenticated) {
+        try {
+          const user = await authService.getUser();
+          console.log("USER DATA", user);
+        } catch (e) {
+          console.error("Auth passed, but failed to fetch user data.", e);
+        }
+      }
+
+      versionService.frontendVersion()
+        .then(version => this.frontendVersion = version)
+        .catch(err => {
+          this.frontendVersion = "Unknown";
+        });
+
+      versionService.backendVersion()
+        .then(version => this.backendVersion = version)
+        .catch(err => {
+          this.backendVersion = "Unknown";
+        });
+
+    })();
+    
+
   }
 };
 </script>
