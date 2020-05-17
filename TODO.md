@@ -1,4 +1,5 @@
 # DEVELOPMENT
+(* = critical path)
 
 - DONE - postgres data volume
 - DONE - postgres username password
@@ -6,10 +7,15 @@
 - DONE - sequelize migrate on start
 - DONE - sequelize seed on command
 - DONE - keycloak
-- auth setup and couple with Node and frontend
+- DONE backend should run with nodemon
+- DONE - *auth - set user on login
+- *auth - topbar
+- *auth - login/logout button
+- *auth - dummy protected frontend route
+- *auth - protected backend route
+- template the auth server BASE_URL for index.html keycloak.js
 - auth JSON export
-- nginx self-signed SSL certs for local.mintbean.io and auth.local.mintbean.io, and turn "Require SSL" on for Keycloak
-- backend should run with nodemon
+- nginx self-signed SSL certs for localhost and auth.localhost, and turn "Require SSL" on for Keycloak
 - [low priority] theme keycloak
 
 PRODUCTION

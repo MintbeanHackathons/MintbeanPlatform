@@ -8,7 +8,7 @@
     </div>
     <div class="content-container">
       <router-view />
-      <div class="version" :v-if="frontendVersion && backendVersion">
+      <div class="versions" :v-if="frontendVersion && backendVersion">
         <p>Frontend: {{frontendVersion}} | Backend: {{backendVersion}}</p>
       </div>
     </div>
@@ -39,67 +39,34 @@
   }
 }
 
-.version {
+.versions {
   text-align: center;
   color: $lightest;
 }
 </style>
 
 <script>
-import { VersionService } from "./services/versionService";
-import { AuthService } from "./services/authService";
-import { version } from '../package.json'
-
 export default {
   name: "App",
   data() {
     return {
       version: null,
-      frontendVersion: null,
-      backendVersion: null,
       errorMessage: null
     };
   },
+  computed: {
+    frontendVersion() {
+      const v = this.$store.state.frontendVersion;
+      console.log("frontendVersion in App.js is", v);
+      return v;
+    },
+    backendVersion() {
+      return this.$store.state.backendVersion;
+    }
+  },
   created() {
-    const versionService = new VersionService();
-    const authService = new AuthService();
-
-    (async () => {
-      debugger;
-      let isAuthenticated;
-      let user;
-
-      try {
-        isAuthenticated = await authService.checkAuth();
-      } catch (e) {
-        console.error('Failed to initialize Auth Service', e);
-        return;
-      }
-
-      if (isAuthenticated) {
-        try {
-          const user = await authService.getUser();
-          console.log("USER DATA", user);
-        } catch (e) {
-          console.error("Auth passed, but failed to fetch user data.", e);
-        }
-      }
-
-      versionService.frontendVersion()
-        .then(version => this.frontendVersion = version)
-        .catch(err => {
-          this.frontendVersion = "Unknown";
-        });
-
-      versionService.backendVersion()
-        .then(version => this.backendVersion = version)
-        .catch(err => {
-          this.backendVersion = "Unknown";
-        });
-
-    })();
-    
-
+    this.$store.dispatch('checkAuth');
+    this.$store.dispatch('setVersions');
   }
 };
 </script>
