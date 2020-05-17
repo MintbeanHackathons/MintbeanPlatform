@@ -43,4 +43,20 @@ export class AuthService {
   getUser() {
     return this.keycloak.loadUserProfile();
   }
+
+  getLoginUrl() {
+    return this.keycloak.createLoginUrl();
+  }
+
+  getLogoutUrl() {
+    return this.keycloak.createLogoutUrl();
+  }
+
+  getRegisterUrl() {
+    return this.keycloak.createRegisterUrl();
+  }
+
+  onReady(callback: (loggedIn: boolean) => void) {
+    this.keycloak.onReady = callback;
+  }
 }

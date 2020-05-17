@@ -10,14 +10,20 @@ export type MbUser = {
 
 export type MbState = {
   user?: MbUser;
-  frontendVersion?: string;
-  backendVersion?: string;
+  frontendVersion: string;
+  backendVersion: string;
+  loginUrl?: string;
+  logoutUrl?: string;
+  registerUrl?: string;
 };
 
 const state: MbState = {
   user: undefined,
   frontendVersion: "Loading",
-  backendVersion: "Loading"
+  backendVersion: "Loading",
+  loginUrl: undefined,
+  logoutUrl: undefined,
+  registerUrl: undefined
 };
 
 const mutations: MutationTree<MbState> = {
@@ -31,10 +37,8 @@ const mutations: MutationTree<MbState> = {
   }
 };
 
-const actions: ActionTree<MbState, MbState> = {
+const createActions: (authservice: AuthService) => ActionTree<MbState, MbState> = authService => ({
   async checkAuth({ commit }) {
-    const authService = new AuthService();
-
     let isAuthenticated;
     let user;
 
@@ -78,11 +82,11 @@ const actions: ActionTree<MbState, MbState> = {
         commit("setProperty", ["backendVersion", "Unknown"]);
       });
   }
-};
+})
 
-export const createStore = () =>
+export const createStore = (authService: AuthService) =>
   new Vuex.Store({
     state,
     mutations,
-    actions
+    actions: createActions(authService)
   });

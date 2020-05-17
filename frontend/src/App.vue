@@ -51,17 +51,10 @@ export default {
   },
   computed: {
     frontendVersion() {
-      const v = this.$store.state.frontendVersion;
-      console.log("frontendVersion in App.js is", v);
-      return v;
+      return this.$store.state.frontendVersion;
     },
     backendVersion() {
       return this.$store.state.backendVersion;
-    },
-    userName() {
-      const user = this.$store.state.user;
-      const username = user.firstName + " " + user.lastName;
-      return username;
     }
   },
   created() {
