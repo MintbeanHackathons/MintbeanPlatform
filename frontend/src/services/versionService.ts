@@ -6,8 +6,6 @@ export class VersionService {
     return Promise.resolve(packageJson.version);
   }
   backendVersion(): Promise<string> {
-    return new ApiService()
-      .get("/api/v1/version")
-      .then(res => res.data);
+    return new ApiService().get("/api/v1/version").then(res => res.data);
   }
 }

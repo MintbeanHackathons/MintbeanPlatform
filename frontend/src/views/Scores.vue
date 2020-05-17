@@ -21,7 +21,7 @@ export default {
   methods: {
     handleSearch: function(e) {
       e.preventDefault();
-      this.$router.push('/scores/' + this.email);
+      this.$router.push("/scores/" + this.email);
     }
   },
   data() {

@@ -1,33 +1,35 @@
-import Vuex, { MutationTree, ActionTree, ActionSubscriber } from "vuex"
+import Vuex, { MutationTree, ActionTree } from "vuex";
 
 import { VersionService } from "./services/versionService";
 import { AuthService } from "./services/authService";
 
-type MbUser = {
+export type MbUser = {
   firstName: string;
   lastName: string;
-}
+};
 
-type MbState = {
-  user?: MbUser,
-  frontendVersion?: string,
-  backendVersion?: string
-}
+export type MbState = {
+  user?: MbUser;
+  frontendVersion?: string;
+  backendVersion?: string;
+};
 
 const state: MbState = {
   user: undefined,
   frontendVersion: "Loading",
   backendVersion: "Loading"
-}
+};
 
 const mutations: MutationTree<MbState> = {
   setProperty(state, arr) {
-    console.log("Trying to set properties", arr)
+    console.log("Trying to set properties", arr);
     const key: keyof MbState = arr[0];
+    /* eslint-disable @typescript-eslint/no-explicit-any */
     const value: any = arr[1];
+    /* eslint-enable  @typescript-eslint/no-explicit-any */
     state[key] = value;
   }
-}
+};
 
 const actions: ActionTree<MbState, MbState> = {
   async checkAuth({ commit }) {
@@ -39,7 +41,7 @@ const actions: ActionTree<MbState, MbState> = {
     try {
       isAuthenticated = await authService.checkAuth();
     } catch (e) {
-      console.error('Failed to initialize Auth Service', e);
+      console.error("Failed to initialize Auth Service", e);
     }
 
     if (isAuthenticated) {
@@ -51,33 +53,36 @@ const actions: ActionTree<MbState, MbState> = {
     }
 
     if (user) {
-      commit('setProperty', ['user', user]);
+      commit("setProperty", ["user", user]);
     } else {
-      commit('setProperty', ['user', undefined]);
+      commit("setProperty", ["user", undefined]);
     }
   },
 
   async setVersions({ commit }) {
     const versionService = new VersionService();
 
-    versionService.frontendVersion()
-      .then(version => commit('setProperty', ['frontendVersion', version]))
+    versionService
+      .frontendVersion()
+      .then(version => commit("setProperty", ["frontendVersion", version]))
       .catch(err => {
-        console.error('Failed to set frontendVersion', err)
-        commit('setProperty', ['frontendVersion', 'Unknown']);
+        console.error("Failed to set frontendVersion", err);
+        commit("setProperty", ["frontendVersion", "Unknown"]);
       });
 
-    versionService.backendVersion()
-      .then(version => commit('setProperty', ['backendVersion', version]))
+    versionService
+      .backendVersion()
+      .then(version => commit("setProperty", ["backendVersion", version]))
       .catch(err => {
-        console.error('Failed to set backendVersion', err)
-        commit('setProperty', ['backendVersion', 'Unknown']);
+        console.error("Failed to set backendVersion", err);
+        commit("setProperty", ["backendVersion", "Unknown"]);
       });
   }
-}
+};
 
-export const createStore = () => new Vuex.Store({
-  state,
-  mutations,
-  actions
-});
+export const createStore = () =>
+  new Vuex.Store({
+    state,
+    mutations,
+    actions
+  });

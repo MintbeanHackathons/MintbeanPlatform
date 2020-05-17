@@ -8,7 +8,7 @@ export class AuthService {
       clientId: "mintbean",
       realm: "Mintbean",
       url: "http://auth.localhost:3000/auth/"
-    }
+    };
 
     this.keycloak = Keycloak(config);
 
@@ -26,8 +26,9 @@ export class AuthService {
   checkAuth(): Promise<boolean> {
     return this.keycloak.init({
       // check the SSO silently via an iframe.
-      onLoad: 'check-sso',
-      silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html'
+      onLoad: "check-sso",
+      silentCheckSsoRedirectUri:
+        window.location.origin + "/silent-check-sso.html"
     });
   }
 

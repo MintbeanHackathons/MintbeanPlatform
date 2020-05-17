@@ -37,7 +37,7 @@
     list-style-type: none;
   }
   li {
-    @include respond-to('small') {
+    @include respond-to("small") {
       display: inline-block;
       width: 100%;
       margin: vstep(1) hstep(0);

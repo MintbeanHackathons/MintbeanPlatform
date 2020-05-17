@@ -1,25 +1,20 @@
 <template>
   <div id="app">
-    <div id="nav" :class="{ ['u-center']: isHome }">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/scores">Legacy Scores</router-link> | 
-      <router-link to="/guidebook">Guidebook</router-link> |
-      <router-link to="/for-educators">For Educators</router-link>
-    </div>
+    <mb-nav :path="$route.path" />
     <div class="content-container">
       <router-view />
       <div class="versions" :v-if="frontendVersion && backendVersion">
-        <p>Frontend: {{frontendVersion}} | Backend: {{backendVersion}}</p>
+        <p>Frontend: {{ frontendVersion }} | Backend: {{ backendVersion }}</p>
       </div>
     </div>
-    <div class="accent-bar top"/>
-    <div class="accent-bar bottom"/>
+    <div class="accent-bar top" />
+    <div class="accent-bar bottom" />
   </div>
 </template>
 
 <style lang="scss" scoped>
-@import './styles/colors';
-@import './styles/dimensions';
+@import "./styles/colors";
+@import "./styles/dimensions";
 
 .accent-bar {
   position: fixed;
@@ -37,10 +32,6 @@
     bottom: 0;
     background-color: $least-blue;
   }
-}
-
-.u-center {
-  text-align: center;
 }
 
 .versions {
@@ -67,13 +58,15 @@ export default {
     backendVersion() {
       return this.$store.state.backendVersion;
     },
-    isHome() {
-      return (this.$route.path === '/');
+    userName() {
+      const user = this.$store.state.user;
+      const username = user.firstName + " " + user.lastName;
+      return username;
     }
   },
   created() {
-    this.$store.dispatch('checkAuth');
-    this.$store.dispatch('setVersions');
+    this.$store.dispatch("checkAuth");
+    this.$store.dispatch("setVersions");
   }
 };
 </script>
