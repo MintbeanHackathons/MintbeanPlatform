@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav" :class="align">
+    <div id="nav" :class="{ ['u-center']: isHome }">
       <router-link to="/">Home</router-link> |
       <router-link to="/scores">Legacy Scores</router-link> | 
       <router-link to="/guidebook">Guidebook</router-link> |
@@ -38,7 +38,8 @@
     background-color: $least-blue;
   }
 }
-.center {
+
+.u-center {
   text-align: center;
 }
 
@@ -51,11 +52,6 @@
 <script>
 export default {
   name: "App",
-  computed: {
-    align() {
-      return (this.$route.path === '/') ? 'center' : '';
-    }
-  },
   data() {
     return {
       version: null,
@@ -70,6 +66,9 @@ export default {
     },
     backendVersion() {
       return this.$store.state.backendVersion;
+    },
+    isHome() {
+      return (this.$route.path === '/');
     }
   },
   created() {
