@@ -11,14 +11,6 @@ services:
       - ./backend:/app
       # The following line makes node_modules a private volume instead of synced to the folder
       - /app/node_modules/
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: ./Dockerfile
-    volumes:
-      - ./frontend:/app
-      # The following line makes node_modules a private volume instead of synced to the folder
-      - /app/node_modules/
   nginx:
     depends_on:
       - keycloak
