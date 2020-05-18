@@ -1,14 +1,63 @@
 version: "3.3"
 services:
+  db:
+    build:
+      context: ./db
+      dockerfile: ./Dockerfile
+    restart: always
+    volumes:
+      - "./db/data:/var/lib/postgresql/data"
+  keycloak:
+    image: quay.io/keycloak/keycloak:10.0.1
+    environment:
+      DB_VENDOR: POSTGRES
+      DB_DATABASE: keycloak
+      DB_SCHEMA: public
+  nginx:
+    depends_on:
+      - keycloak
+    build:
+      context: ./nginx
+      dockerfile: ./Dockerfile
+    networks:
+      - prodnet
+    ports:
+      - "80:3000"
+    volumes:
+      - ./nginx/production.conf/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/production.conf/sites-enabled:/etc/nginx/sites-enabled:ro
+      # Disable nginx html
+      - /etc/nginx/
   frontend:
     build:
       context: ./frontend
       dockerfile: ./production.Dockerfile
+    volumes:
+      - ./frontend:/app
+      # The following line makes node_modules a private volume instead of synced to the folder
+      - /app/node_modules/
     networks:
       - prodnet
     ports:
       - "3000:80"
-
+  backend:
+    depends_on:
+      - db
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./backend:/app
+      # The following line makes node_modules a private volume instead of synced to the folder
+      - /app/node_modules/
+    networks:
+      - prodnet
+    ports:
+      - "3002:3002"
+    environment:
+      DB_HOST: "db"
+      DB_PASSWORD: "${BACKEND_DB_PASSWORD}"
+    command: 'bash -c "yarn sql db:migrate && yarn start"'
 networks:
   prodnet:
     driver: bridge

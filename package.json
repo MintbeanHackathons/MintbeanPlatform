@@ -3,20 +3,21 @@
   "version": "1.1.0",
   "private": true,
   "scripts": {
-    "prod": "docker-compose -f docker-compose.base.yml -f docker-compose.production.yml",
-    "prod.start": "docker-compose -f docker-compose.base.yml -f docker-compose.production.yml up -d",
-    "prod.build": "docker-compose -f docker-compose.base.yml -f docker-compose.production.yml build --no-cache",
+    "prod": "docker-compose -f docker-compose.production.yml",
+    "prod.start": "docker-compose -f docker-compose.production.yml up -d",
+    "prod.build": "docker-compose -f docker-compose.production.yml build --no-cache",
     "prod.stop": "echo 'Not Implemented'",
-    "dev": "docker-compose -f docker-compose.base.yml -f docker-compose.development.yml",
-    "dev.start": "docker-compose -f docker-compose.base.yml -f docker-compose.development.yml up -d",
-    "dev.build": "docker-compose -f docker-compose.base.yml -f docker-compose.development.yml build --no-cache",
-    "dev.stop": "docker-compose -f docker-compose.base.yml -f docker-compose.development.yml stop",
+    "dev": "docker-compose -f docker-compose.development.yml",
+    "dev.start": "docker-compose -f docker-compose.development.yml up -d",
+    "dev.build": "docker-compose -f docker-compose.development.yml build --no-cache",
+    "dev.stop": "docker-compose -f docker-compose.development.yml stop",
     "dev.psql": "PGPASSWORD=password psql -U mintbean -d mintbean_development -h 0.0.0.0",
-    "dev.sql": "docker-compose -f docker-compose.base.yml -f docker-compose.development.yml exec backend yarn sql",
-    "dev.seed": "docker-compose -f docker-compose.base.yml -f docker-compose.development.yml exec backend yarn sql db:seed:all",
+    "dev.sql": "docker-compose -f docker-compose.development.yml exec backend yarn sql",
+    "dev.seed": "docker-compose -f docker-compose.development.yml exec backend yarn sql db:seed:all",
     "dev.auth.init": "yarn dev exec keycloak /opt/jboss/keycloak/bin/add-user-keycloak.sh -u keycloak -p password",
     "dev.clean": "./scripts/docker-rm-all.sh",
-    "dev.frontend": "docker-compose -f docker-compose.base.yml -f docker-compose.development.yml up -d --scale frontend=0",
-    "dev.fullstack": "docker-compose -f docker-compose.base.yml -f docker-compose.development.yml up -d --scale frontend=0 --scale backend=0"
+    "dev.fixdb": "sudo chown -R $USER:$USER db/data/",
+    "dev.frontend": "docker-compose -f docker-compose.development.yml up -d --scale frontend=0",
+    "dev.fullstack": "docker-compose -f docker-compose.development.yml up -d --scale frontend=0 --scale backend=0"
   }
 }

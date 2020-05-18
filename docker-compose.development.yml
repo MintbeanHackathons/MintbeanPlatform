@@ -1,23 +1,43 @@
 version: "3.3"
 services:
   nginx:
+    depends_on:
+      - keycloak
+    build:
+      context: ./nginx
+      dockerfile: ./Dockerfile
     networks:
       - devnet
     ports:
       - "3000:3000"
+    volumes:
+      - ./nginx/development.conf/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/development.conf/sites-enabled:/etc/nginx/sites-enabled:ro
+      # Disable nginx html
+      - /etc/nginx/
   frontend:
     build:
       context: ./frontend
       dockerfile: ./development.Dockerfile
-    volumes:
-      - ./frontend:/app
-      # The following line makes node_modules a private volume instead of synced to the folder
-      - /app/node_modules/
     networks:
       - devnet
     ports:
       - "3001:3001"
+    volumes:
+      - ./frontend:/app
+      # The following line makes node_modules a private volume instead of synced to the folder
+      - /app/node_modules/
+  # NodeJS Backend Server
   backend:
+    depends_on:
+      - db
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./backend:/app
+      # The following line makes node_modules a private volume instead of synced to the folder
+      - /app/node_modules/
     networks:
       - devnet
     ports:
@@ -27,11 +47,13 @@ services:
       DB_PASSWORD: password
     command: 'bash -c "yarn sql db:migrate && yarn dev"'
   keycloak:
-    # ports:
-    #   - "3003:8080"
+    image: quay.io/keycloak/keycloak:10.0.1
     networks:
       - devnet
     environment:
+      DB_VENDOR: POSTGRES
+      DB_DATABASE: keycloak
+      DB_SCHEMA: public
       KEYCLOAK_HOSTNAME: auth.localhost
       KEYCLOAK_HTTP_PORT: "3000"
       DB_PORT: 5432
@@ -39,6 +61,12 @@ services:
       DB_USER: keycloak
       DB_PASSWORD: password
   db:
+    build:
+      context: ./db
+      dockerfile: ./Dockerfile
+    restart: always
+    volumes:
+      - "./db/data:/var/lib/postgresql/data"
     networks:
       - devnet
     expose:
