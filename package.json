@@ -6,7 +6,7 @@
     "prod": "docker-compose -f docker-compose.production.yml",
     "prod.start": "docker-compose -f docker-compose.production.yml up -d",
     "prod.build": "docker-compose -f docker-compose.production.yml build --no-cache",
-    "prod.stop": "echo 'Not Implemented'",
+    "prod.stop": "docker-compose -f docker-compose.production.yml stop",
     "dev": "docker-compose -f docker-compose.development.yml",
     "dev.start": "docker-compose -f docker-compose.development.yml up -d",
     "dev.build": "docker-compose -f docker-compose.development.yml build --no-cache",

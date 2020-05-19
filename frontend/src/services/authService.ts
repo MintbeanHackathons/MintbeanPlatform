@@ -4,10 +4,12 @@ export class AuthService {
   keycloak: KeycloakInstance;
 
   constructor() {
+    console.log("Process.env is", process.env);
+
     const config: KeycloakConfig = {
       clientId: "mintbean",
       realm: "Mintbean",
-      url: "http://auth.localhost:3000/auth/"
+      url: process.env.VUE_APP_KEYCLOAK_URL || "http://auth.localhost:3000/auth/"
     };
 
     this.keycloak = Keycloak(config);

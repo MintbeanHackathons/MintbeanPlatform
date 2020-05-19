@@ -1,18 +1,5 @@
 version: "3.3"
 services:
-  db:
-    build:
-      context: ./db
-      dockerfile: ./Dockerfile
-    restart: always
-    volumes:
-      - "./db/data:/var/lib/postgresql/data"
-  keycloak:
-    image: quay.io/keycloak/keycloak:10.0.1
-    environment:
-      DB_VENDOR: POSTGRES
-      DB_DATABASE: keycloak
-      DB_SCHEMA: public
   nginx:
     depends_on:
       - keycloak
@@ -22,7 +9,7 @@ services:
     networks:
       - prodnet
     ports:
-      - "80:3000"
+      - "80:80"
     volumes:
       - ./nginx/production.conf/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/production.conf/sites-enabled:/etc/nginx/sites-enabled:ro
@@ -32,32 +19,60 @@ services:
     build:
       context: ./frontend
       dockerfile: ./production.Dockerfile
-    volumes:
-      - ./frontend:/app
-      # The following line makes node_modules a private volume instead of synced to the folder
-      - /app/node_modules/
+      args:
+        frontend_vue_app_keycloak_url: ${FRONTEND_VUE_APP_KEYCLOAK_URL}
     networks:
       - prodnet
     ports:
-      - "3000:80"
+      - "3001:80"
+  #NodeJS backend server
   backend:
     depends_on:
       - db
     build:
       context: ./backend
-      dockerfile: ./Dockerfile
-    volumes:
-      - ./backend:/app
-      # The following line makes node_modules a private volume instead of synced to the folder
-      - /app/node_modules/
+      dockerfile: ./production.Dockerfile
     networks:
       - prodnet
     ports:
       - "3002:3002"
     environment:
-      DB_HOST: "db"
+      DB_HOST: db
+      DB_USERNAME: "${BACKEND_DB_USERNAME}"
       DB_PASSWORD: "${BACKEND_DB_PASSWORD}"
-    command: 'bash -c "yarn sql db:migrate && yarn start"'
+    command: 'bash -c "NODE_ENV=production yarn sql db:migrate && yarn start"'
+  keycloak:
+    image: quay.io/keycloak/keycloak:10.0.1
+    networks:
+      - prodnet
+    ports:
+      - "8080:8080"
+    environment:
+      DB_VENDOR: POSTGRES
+      DB_SCHEMA: public
+      KEYCLOAK_HOSTNAME: "${KEYCLOAK_HOSTNAME}"
+      KEYCLOAK_HTTP_PORT: "80"
+      DB_PORT: 5432
+      DB_ADDR: db
+      DB_DATABASE: ${KEYCLOAK_DB_DATABASE}
+      DB_USER: "${KEYCLOAK_DB_USER}"
+      DB_PASSWORD: "${KEYCLOAK_DB_PASSWORD}"
+  db:
+    image: postgres
+    restart: always
+    volumes:
+      - "./db/data.prod:/var/lib/postgresql/data"
+    networks:
+      - prodnet
+    expose:
+      - "5432"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: "${DB_POSTGRES_USER}"
+      POSTGRES_PASSWORD: "${DB_POSTGRES_PASSWORD}"
+      POSTGRES_DB: mintbean_production
+
 networks:
   prodnet:
     driver: bridge

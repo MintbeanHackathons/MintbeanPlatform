@@ -5,7 +5,7 @@
   "author": "Monarch Wadia",
   "private": true,
   "scripts": {
-    "start": "node index.js",
+    "start": "NODE_ENV=production node index.js",
     "dev": "NODE_ENV=development nodemon index.js",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest",

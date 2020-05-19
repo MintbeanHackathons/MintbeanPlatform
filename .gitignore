@@ -4,3 +4,4 @@
 
 # db volume for docker
 /db/data
+/db/data.prod

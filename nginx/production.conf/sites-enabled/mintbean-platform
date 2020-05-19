@@ -1,7 +1,10 @@
 server {
   # server name here needs to be added to your Hostsfile
+  # server_name ~ (^mintbean\.io|^staging\.mintbean\.io|^mintbean\.org|^staging\.mintbean\.org|^www\.mintbean\.io|^www\.mintbean\.org)/?.*;
+  # server_name mintbean.io staging.mintbean.io mintbean.org staging.mintbean.org;
+  # server_name mintbean.io www.mintbean.io staging.mintbean.io
   server_name mintbean.io staging.mintbean.io mintbean.org staging.mintbean.org;
-  listen 3000;
+  listen 80;
 
   location /api/v1 {
     # server domain is the same as the service's name inside docker-compose.yml
@@ -15,7 +18,7 @@ server {
     # server domain is the same as the service's name inside docker-compose.yml
     # server port is the same as the exposed port inside docker-compose.yml
     resolver 127.0.0.11;
-    set $target frontend:3001;
+    set $target frontend;
     proxy_pass http://$target;
   }
 
@@ -28,13 +31,15 @@ server {
 
 server {
   # server name here needs to be added to your Hostsfile
+  # server_name ~ (^auth\.mintbean\.io|^auth\.staging\.mintbean\.io|^auth\.mintbean\.org|^auth\.staging\.mintbean\.org);
   server_name auth.mintbean.io auth.staging.mintbean.io auth.mintbean.org auth.staging.mintbean.org;
-  listen 3000;
+  listen 80;
 
   location / {
     # server domain is the same as the service's name inside docker-compose.yml
     # server port is the same as the exposed port inside docker-compose.yml
     resolver 127.0.0.11;
+    # set $target keycloak:8080;
     set $target keycloak:8080;
     proxy_pass http://$target;
   }

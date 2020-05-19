@@ -33,7 +33,7 @@ services:
       - db
     build:
       context: ./backend
-      dockerfile: ./Dockerfile
+      dockerfile: ./development.Dockerfile
     volumes:
       - ./backend:/app
       # The following line makes node_modules a private volume instead of synced to the folder
@@ -63,7 +63,7 @@ services:
   db:
     build:
       context: ./db
-      dockerfile: ./Dockerfile
+      dockerfile: ./development.Dockerfile
     restart: always
     volumes:
       - "./db/data:/var/lib/postgresql/data"
