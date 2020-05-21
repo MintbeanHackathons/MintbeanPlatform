@@ -5,7 +5,7 @@ services:
       - keycloak
     build:
       context: ./nginx
-      dockerfile: ./Dockerfile
+      dockerfile: ./production.Dockerfile
     networks:
       - prodnet
     ports:
