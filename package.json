@@ -2,7 +2,11 @@
   "name": "mintbean-root",
   "version": "1.1.0",
   "private": true,
+  "bin": {
+    "bean": "ts-node ./bin/bean.ts"
+  },
   "scripts": {
+    "cli.build": "tsc --project ./cli.tsconfig.json",
     "prod": "docker-compose -f docker-compose.production.yml",
     "prod.start": "docker-compose -f docker-compose.production.yml up -d",
     "prod.build": "docker-compose -f docker-compose.production.yml build --no-cache",
@@ -19,5 +23,13 @@
     "dev.fixdb": "sudo chown -R $USER:$USER db/data/",
     "dev.frontend": "docker-compose -f docker-compose.development.yml up -d --scale frontend=0",
     "dev.fullstack": "docker-compose -f docker-compose.development.yml up -d --scale frontend=0 --scale backend=0"
+  },
+  "dependencies": {
+    "@types/node": "^12.12.41",
+    "commander": "^5.1.0"
+  },
+  "devDependencies": {
+    "ts-node": "^8.10.1",
+    "typescript": "^3.9.3"
   }
 }
