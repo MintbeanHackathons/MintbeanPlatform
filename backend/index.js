@@ -54,7 +54,7 @@ async function start () {
 
   server.auth.strategy("keycloak-jwt", "keycloak-jwt", {
     // realmUrl: "https://localhost:8080/auth/realms/testme",
-    realmUrl: "http://local.auth.mintbean.io:3000/auth/realms/mintbean.io",
+    realmUrl: "https://auth.mintbean.io/auth/realms/Mintbean",
     clientId: "mintbean-backend",
     minTimeBetweenJwksRequests: 15,
     cache: true,

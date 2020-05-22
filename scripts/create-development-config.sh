@@ -21,4 +21,8 @@ openssl req -x509 -nodes -days 365 -newkey rsa:1024 \
     -keyout /opt/mintbean/config/self-signed-ssl/self-signed-ssl.key \
     -out /opt/mintbean/config/self-signed-ssl/self-signed-ssl.crt
 
+echo 'Creating /opt/mintbean/config/docker-compose.env'
+mkdir -p /opt/mintbean/config
+cp ./docker-compose.env /opt/mintbean/config/docker-compose.env
+
 echo 'DONE!'

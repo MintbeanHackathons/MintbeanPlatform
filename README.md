@@ -26,7 +26,7 @@ Please see the [Contact Info](documentation/contact.md)
 ## Prerequisites
 
 1. [Docker](https://www.docker.com/)
-1. [Docker Compose](https://docs.docker.com/compose/)
+1. [Docker Compose](https://docs.docker.com/compose/), at least version 1.25.4
 1. [NodeJS](https://nodejs.org/en/)
 1. Ubuntu 18.04.2 LTS is the only system this has currently been tested on. It may work on other versions of Ubuntu and other Unix platforms, as well as Mac OS. It probably WON'T work on Windows without some modifications.
 
@@ -43,8 +43,11 @@ We will be using `yarn` below, but please replace with `npm run` where necessary
 3. Run `yarn dev.build`
 4. Run `yarn dev.start`
 
+You can now visit https://mintbean.io for the application, and https://auth.mintbean.io for the auth console.
 
-Visit https://mintbean.io for the application, and https://auth.mintbean.io for the auth console.
+It can take up to 10 minutes for the whole stack to come up the first time, so please be patient.
+
+5. To set up the keycloak user, run `yarn dev.auth.init && yarn dev.stop keycloak && yarn dev.start keycloak`. Now you can log into https://auth.mintbean.io with username `keycloak` and password `password`.
 
 <!--
 1. Fork and clone this project. [See guide](./documentation/fork-clone.md)
@@ -122,3 +125,8 @@ nslookup auth.mintbean.io
 # Name:   auth.mintbean.io
 # Address: 127.0.0.1
 ```
+
+### Environment variables haven't been set when running yarn dev.start?
+
+We make use of the `--env-file` flag, which was added in February 2020. Please make sure your docker-compose is at least version 1.25.4.
+

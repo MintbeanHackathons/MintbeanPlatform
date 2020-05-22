@@ -1,6 +1,6 @@
 server {
   # server name here needs to be added to your Hostsfile
-  server_name localhost;
+  server_name mintbean.io staging.mintbean.io mintbean.org staging.mintbean.org;
   listen 8080;
 
   location /api/v1 {
@@ -33,7 +33,7 @@ server {
 
 server {
   # server name here needs to be added to your Hostsfile
-  server_name auth.localhost;
+  server_name auth.mintbean.io auth.staging.mintbean.io auth.mintbean.org auth.staging.mintbean.org;
   listen 8080;
 
   location / {

@@ -13,6 +13,7 @@ services:
     volumes:
       - ./nginx/production.conf/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/production.conf/sites-enabled:/etc/nginx/sites-enabled:ro
+      # TODO: set letsencrypt files here and configure SSL accordingly
       # Disable nginx html
       - /etc/nginx/
   frontend:
@@ -20,7 +21,9 @@ services:
       context: ./frontend
       dockerfile: ./production.Dockerfile
       args:
-        frontend_vue_app_keycloak_url: ${FRONTEND_VUE_APP_KEYCLOAK_URL}
+        FRONTEND_VUE_APP_KEYCLOAK_CLIENT_ID: ${FRONTEND_VUE_APP_KEYCLOAK_CLIENT_ID}
+        FRONTEND_VUE_APP_KEYCLOAK_REALM: ${FRONTEND_VUE_APP_KEYCLOAK_REALM}
+        FRONTEND_VUE_APP_KEYCLOAK_URL: ${FRONTEND_VUE_APP_KEYCLOAK_URL}
     networks:
       - prodnet
     ports:
