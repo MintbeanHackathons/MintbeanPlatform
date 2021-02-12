@@ -1,6 +1,6 @@
-# About the Mintbean Platform
+# About the [Deprecated] Mintbean Platform
 
-Welcome to the Mintbean Platform. This project is what appears at [Mintbean.io](https://mintbean.io).
+Welcome to the Mintbean Platform. This project is what used to appear at [Mintbean.io](https://mintbean.io).
 
 ## About Mintbean
 
