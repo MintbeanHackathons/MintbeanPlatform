@@ -35,7 +35,7 @@
     "html-loader": "^1.1.0",
     "markdown-loader": "^5.1.0",
     "prettier": "^1.19.1",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "pug-plain-loader": "^1.0.0",
     "require-from-string": "^2.0.2",
     "sass": "^1.26.5",
