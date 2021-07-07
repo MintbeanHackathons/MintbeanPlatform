@@ -1,0 +1,129 @@
+<template lang="pug">
+  div
+    h1 Contributors
+    p(v-if="this.errorMessage" class="error") {{ errorMessage }}
+    div
+      table(style='width:100%')
+        thead
+          tr
+            th Name
+            th Github
+            th Portfolio
+            th LinkedIn
+        tbody
+          tr(v-for="contributor in contributors" class="result")
+            td {{ contributor.name }}
+            td(v-if="contributor.login")
+              mb-a(:href="contributor.html_url") {{contributor.login}}
+            td(v-else) n/a
+            td(v-if="contributor.portfolio")
+              mb-a(:href="contributor.portfolio" ) Portfolio
+            td(v-else) n/a
+            td(v-if="contributor.linkedIn")
+              mb-a(:href="contributor.linkedIn") LinkedIn
+            td(v-else) n/a
+
+</template>
+
+<style lang="scss" scoped>
+@import "../styles/dimensions";
+
+.result {
+  padding: vstep(1) hstep(1);
+  margin-bottom: hstep(2);
+}
+
+tr:nth-of-type(odd) {
+  background: #eee;
+}
+th {
+  background: #333;
+  color: white;
+  font-weight: bold;
+}
+td,
+th {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    border: none;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  td:nth-of-type(1):before {
+    content: "Name";
+  }
+  td:nth-of-type(2):before {
+    content: "Github";
+  }
+  td:nth-of-type(3):before {
+    content: "Portfolio";
+  }
+  td:nth-of-type(4):before {
+    content: "LinkedIn";
+  }
+}
+</style>
+
+<script>
+import { ApiService } from "../services/apiService";
+
+export default {
+  name: "Contributors",
+  data() {
+    return {
+      contributors: [],
+      errorMessage: null
+    };
+  },
+  created() {
+    new ApiService()
+      .get("/api/v1/contributors")
+      .then(({ data }) => {
+        this.contributors = data;
+        this.errorMessage = null;
+      })
+      .catch(e => {
+        console.error(e);
+        this.contributors = [];
+        this.errorMessage = "Failed to fetch contributors";
+      });
+  }
+};
+</script>
