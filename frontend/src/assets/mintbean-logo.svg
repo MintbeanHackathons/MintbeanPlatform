@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="8.5in"
+   height="11in"
+   viewBox="0 0 215.9 279.4"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="mintbean-logo.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient12693">
+      <stop
+         style="stop-color:#239cd6;stop-opacity:1"
+         offset="0"
+         id="stop12689" />
+      <stop
+         style="stop-color:#00f09c;stop-opacity:1"
+         offset="1"
+         id="stop12691" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient12693"
+       id="linearGradient12695"
+       x1="269.22351"
+       y1="198.12411"
+       x2="311.17316"
+       y2="37.591671"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.5877631,0,0,1.5877631,-303.95366,-108.96286)" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.5094697"
+     inkscape:cx="408"
+     inkscape:cy="528"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     units="in" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-45.724734,61.667984)">
+    <path
+       inkscape:connector-curvature="0"
+       id="path12683"
+       d="m 123.50946,205.61129 c -5.94261,-1.71934 -11.85366,-8.41902 -11.84077,-13.4205 0.005,-1.88502 3.28197,-19.69193 7.28245,-39.57091 13.54944,-67.329181 26.37847,-113.082035 40.52533,-144.52756 3.8089,-8.46642802 10.00662,-22.517416 13.77269,-31.224415 8.05248,-18.617086 12.35908,-22.958967 21.55588,-21.732468 18.10352,2.414321 41.0191,21.600331 51.75134,43.3286859 10.05813,20.3635521 12.98183,34.2213811 13.14162,62.2901901 0.11368,19.978553 -0.49456,26.817334 -3.41704,38.414753 -10.75337,42.672994 -27.69893,67.674224 -59.91642,88.399804 -23.42357,15.06843 -55.59603,23.03589 -72.85508,18.04242 z M 80.598991,183.49728 C 67.949886,169.9732 57.788283,149.82744 52.197085,127.18945 44.29123,95.179736 48.234997,69.373247 52.31585,55.920972 60.436496,29.15216 75.733195,5.283897 99.295536,-17.384025 c 18.678334,-17.969313 28.622204,-23.902152 50.926774,-30.384574 21.85795,-6.352629 24.2241,-4.14627 13.85685,12.92114 -25.44298,41.886327 -58.67764,144.716319 -65.429907,202.443969 -2.242334,19.17053 -3.70422,23.59753 -7.79244,23.59753 -1.682505,0 -6.29856,-3.46355 -10.257902,-7.69676 z"
+       style="fill:url(#linearGradient12695);fill-opacity:1;stroke-width:1.62036896"
+       sodipodi:nodetypes="scscssssssscscssssscc"
+       inkscape:export-filename="A:\Mintbean\mintbean-logo-72dpi.png"
+       inkscape:export-xdpi="72.027687"
+       inkscape:export-ydpi="72.027687" />
+  </g>
+</svg>
