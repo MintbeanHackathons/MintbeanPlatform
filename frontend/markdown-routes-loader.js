@@ -1,4 +1,4 @@
-const requireFromString = require('require-from-string');
+const requireFromString = require("require-from-string");
 
 // this loader handles the conversion of handlebars templates to simple HTML
 // see vue.config.js
@@ -9,4 +9,4 @@ module.exports = function(ejsContent) {
       // TODO: add routes helper
     }
   });
-}
+};

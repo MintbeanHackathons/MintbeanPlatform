@@ -34,43 +34,45 @@
 </template>
 
 <style scoped>
-  .result {
-    border: 1px solid grey;
-    padding: 5px;
-    margin-bottom: 16px;
-  }
-  .section {
-    border-bottom: 1px solid grey;
-  }
+.result {
+  border: 1px solid grey;
+  padding: 5px;
+  margin-bottom: 16px;
+}
+.section {
+  border-bottom: 1px solid grey;
+}
 </style>
 
 <script>
-import { ApiService } from '../services/apiService';
+import { ApiService } from "../services/apiService";
 
 export default {
-
   name: "Scores",
-  props: ['email'],
+  props: ["email"],
   data() {
     return {
       scores: [],
       errorMessage: null
-    }
+    };
   },
-  created () {
+  created() {
     const apiService = new ApiService();
 
-    apiService.get(`/api/v1/score/${this.email}`).then(response => {
-      this.scores = response.data;
-      this.errorMessage = null;
-    }).catch(({request}) => {
-      this.scores = [];
-      if (request.status === 404) {
-        this.errorMessage = "No scores found for that email.";
-      } else {
-        this.errorMessage = "Failed to fetch results."
-      }
-    });
+    apiService
+      .get(`/api/v1/score/${this.email}`)
+      .then(response => {
+        this.scores = response.data;
+        this.errorMessage = null;
+      })
+      .catch(({ request }) => {
+        this.scores = [];
+        if (request.status === 404) {
+          this.errorMessage = "No scores found for that email.";
+        } else {
+          this.errorMessage = "Failed to fetch results.";
+        }
+      });
   }
 };
 </script>

@@ -1,25 +1,20 @@
 <template>
   <div id="app">
-    <div id="nav" :class="align">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/scores">Legacy Scores</router-link> | 
-      <router-link to="/guidebook">Guidebook</router-link> |
-      <router-link to="/for-educators">For Educators</router-link>
-    </div>
+    <mb-nav :path="$route.path" />
     <div class="content-container">
       <router-view />
-      <div class="version" :v-if="frontendVersion && backendVersion">
-        <p>Frontend: {{frontendVersion}} | Backend: {{backendVersion}}</p>
+      <div class="versions" :v-if="frontendVersion && backendVersion">
+        <p>Frontend: {{ frontendVersion }} | Backend: {{ backendVersion }}</p>
       </div>
     </div>
-    <div class="accent-bar top"/>
-    <div class="accent-bar bottom"/>
+    <div class="accent-bar top" />
+    <div class="accent-bar bottom" />
   </div>
 </template>
 
 <style lang="scss" scoped>
-@import './styles/colors';
-@import './styles/dimensions';
+@import "./styles/colors";
+@import "./styles/dimensions";
 
 .accent-bar {
   position: fixed;
@@ -38,49 +33,33 @@
     background-color: $least-blue;
   }
 }
-.center {
-  text-align: center;
-}
 
-.version {
+.versions {
   text-align: center;
   color: $lightest;
 }
 </style>
 
 <script>
-import { VersionService } from "./services/versionService";
-import { version } from '../package.json'
-
 export default {
   name: "App",
-  computed: {
-    align() {
-      return (this.$route.path === '/') ? 'center' : '';
-    }
-  },
   data() {
     return {
       version: null,
-      frontendVersion: null,
-      backendVersion: null,
       errorMessage: null
     };
   },
+  computed: {
+    frontendVersion() {
+      return this.$store.state.frontendVersion;
+    },
+    backendVersion() {
+      return this.$store.state.backendVersion;
+    }
+  },
   created() {
-    const versionService = new VersionService();
-
-    versionService.frontendVersion()
-      .then(version => this.frontendVersion = version)
-      .catch(err => {
-        this.frontendVersion = "Unknown";
-      });
-
-    versionService.backendVersion()
-      .then(version => this.backendVersion = version)
-      .catch(err => {
-        this.backendVersion = "Unknown";
-      });
+    this.$store.dispatch("checkAuth");
+    this.$store.dispatch("setVersions");
   }
 };
 </script>

@@ -1,0 +1,20 @@
+# Dockerfile
+FROM node:12.16.1
+WORKDIR /app
+
+ARG FRONTEND_VUE_APP_KEYCLOAK_CLIENT_ID
+ARG FRONTEND_VUE_APP_KEYCLOAK_REALM
+ARG FRONTEND_VUE_APP_KEYCLOAK_URL
+
+# Copy and install dependencies
+COPY package*.json yarn.lock ./
+RUN echo "\
+  VUE_APP_KEYCLOAK_CLIENT_ID=$FRONTEND_VUE_APP_KEYCLOAK_CLIENT_ID \
+  VUE_APP_KEYCLOAK_REALM=$FRONTEND_VUE_APP_KEYCLOAK_REALM \
+  VUE_APP_KEYCLOAK_URL=$FRONTEND_VUE_APP_KEYCLOAK_URL \
+  " >> .env && cat .env && yarn install
+
+EXPOSE 3001
+CMD yarn start
+
+# VOLUMES are handled by docker-compose.yml

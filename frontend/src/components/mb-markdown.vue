@@ -5,6 +5,6 @@
 
 <script>
 export default {
-  props: ['markdown']
-}
+  props: ["markdown"]
+};
 </script>

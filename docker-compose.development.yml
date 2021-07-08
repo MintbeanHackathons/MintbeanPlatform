@@ -1,0 +1,89 @@
+version: "3.3"
+services:
+  nginx:
+    depends_on:
+      - keycloak
+    build:
+      context: ./nginx
+      dockerfile: ./development.Dockerfile
+    networks:
+      - devnet
+    ports:
+      - "80:8080"
+      - "443:8443"
+    volumes:
+      - ./nginx/development.conf/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/development.conf/sites-enabled:/etc/nginx/sites-enabled:ro
+      - /opt/mintbean/config/self-signed-ssl:/opt/mintbean/config/self-signed-ssl
+      # Disable nginx html
+      - /etc/nginx/
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ./development.Dockerfile
+      args:
+        FRONTEND_VUE_APP_KEYCLOAK_CLIENT_ID: ${FRONTEND_VUE_APP_KEYCLOAK_CLIENT_ID}
+        FRONTEND_VUE_APP_KEYCLOAK_REALM: ${FRONTEND_VUE_APP_KEYCLOAK_REALM}
+        FRONTEND_VUE_APP_KEYCLOAK_URL: ${FRONTEND_VUE_APP_KEYCLOAK_URL}
+    networks:
+      - devnet
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./frontend:/app
+      # The following line makes node_modules a private volume instead of synced to the folder
+      - /app/node_modules/
+  # NodeJS Backend Server
+  backend:
+    depends_on:
+      - db
+    build:
+      context: ./backend
+      dockerfile: ./development.Dockerfile
+    volumes:
+      - ./backend:/app
+      # The following line makes node_modules a private volume instead of synced to the folder
+      - /app/node_modules/
+    networks:
+      - devnet
+    ports:
+      - "3002:3002"
+    environment:
+      DB_HOST: "db"
+      DB_PASSWORD: password
+    command: 'bash -c "yarn sql db:migrate && yarn dev"'
+  keycloak:
+    image: quay.io/keycloak/keycloak:10.0.1
+    networks:
+      - devnet
+    environment:
+      DB_VENDOR: POSTGRES
+      DB_SCHEMA: public
+      KEYCLOAK_HOSTNAME: "${KEYCLOAK_HOSTNAME}"
+      KEYCLOAK_HTTP_PORT: "80"
+      DB_PORT: 5432
+      DB_ADDR: db
+      DB_DATABASE: ${KEYCLOAK_DB_DATABASE}
+      DB_USER: "${KEYCLOAK_DB_USER}"
+      DB_PASSWORD: "${KEYCLOAK_DB_PASSWORD}"
+  db:
+    build:
+      context: ./db
+      dockerfile: ./development.Dockerfile
+    restart: always
+    volumes:
+      - "./db/data:/var/lib/postgresql/data"
+    networks:
+      - devnet
+    expose:
+      - "5432"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: mintbean
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mintbean_development
+
+networks:
+  devnet:
+    driver: bridge

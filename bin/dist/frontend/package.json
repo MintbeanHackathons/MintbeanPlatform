@@ -1,0 +1,51 @@
+{
+    "name": "mintbean.io",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "start": "vue-cli-service serve",
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint",
+        "dev.frontend": "PORT=3010 DEVSERVER_PROXY_TARGET=http://localhost:3000 vue-cli-service serve",
+        "dev.fullstack": "PORT=3010 DEVSERVER_PROXY_TARGET=http://localhost:3011 vue-cli-service serve"
+    },
+    "dependencies": {
+        "axios": "^0.19.2",
+        "core-js": "^3.6.4",
+        "keycloak-js": "^10.0.1",
+        "vue": "^2.6.11",
+        "vue-router": "^3.1.6",
+        "vuex": "^3.4.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@types/node": "^12.12.37",
+        "@typescript-eslint/eslint-plugin": "^2.26.0",
+        "@typescript-eslint/parser": "^2.26.0",
+        "@vue/cli-plugin-babel": "~4.3.0",
+        "@vue/cli-plugin-eslint": "~4.3.0",
+        "@vue/cli-plugin-router": "~4.3.0",
+        "@vue/cli-plugin-typescript": "~4.3.0",
+        "@vue/cli-service": "~4.3.0",
+        "@vue/eslint-config-prettier": "^6.0.0",
+        "@vue/eslint-config-typescript": "^5.0.2",
+        "babel-loader": "^8.1.0",
+        "ejs": "^3.1.2",
+        "ejs-loader": "^0.3.6",
+        "eslint": "^6.7.2",
+        "eslint-plugin-prettier": "^3.1.1",
+        "eslint-plugin-vue": "^6.2.2",
+        "html-loader": "^1.1.0",
+        "markdown-loader": "^5.1.0",
+        "prettier": "^1.19.1",
+        "pug": "^2.0.4",
+        "pug-plain-loader": "^1.0.0",
+        "require-from-string": "^2.0.2",
+        "sass": "^1.26.5",
+        "sass-loader": "^8.0.2",
+        "typescript": "~3.8.3",
+        "vue-cli-plugin-pug": "~1.0.7",
+        "vue-template-compiler": "^2.6.11"
+    }
+}
