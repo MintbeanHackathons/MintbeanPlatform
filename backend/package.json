@@ -30,7 +30,7 @@
     "hapi-pino": "^8.0.0",
     "pg": "^8.0.2",
     "sequelize": "^5.21.6",
-    "xlsx": "^0.15.6"
+    "xlsx": "^0.17.0"
   },
   "devDependencies": {
     "eslint": "^6.1.0",
